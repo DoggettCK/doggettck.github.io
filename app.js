@@ -4,8 +4,6 @@ function select_random_game(elements) {
   var index = Math.floor(Math.random() * elements.length) % elements.length;
 
   elements[index].className = 'label label-success';
-
-  return elements[index];
 };
 
 function fib_next(a, b) { return [b, a+b]; };
@@ -14,7 +12,8 @@ function next_spin(elements, previous_timeout, next_timeout) {
   if (previous_timeout > 1000) { return; }
 
   [previous_timeout, next_timeout] = fib_next(previous_timeout, next_timeout);
-  selected = select_random_game(elements);
+
+  select_random_game(elements);
 
   setTimeout(function() {
     next_spin(elements, previous_timeout, next_timeout);
