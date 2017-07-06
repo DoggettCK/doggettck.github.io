@@ -1,4 +1,5 @@
 ul li.selected {
-  background-color: #8f8;
-  color: #fff;
+  border: 0.25em solid #8f8;
+  font-size: 1.5em;
+  padding: 0.25em;
 }
