@@ -21,8 +21,15 @@ function next_spin(elements, previous_timeout, next_timeout) {
 };
 
 function spin(ul_id) {
-  var games = document.querySelectorAll("#" + ul_id + " li h3 span");
+  var games = document.querySelectorAll('#' + ul_id + ' li h3 span');
 
   next_spin(games, 1, 1);
 };
 
+function main() {
+  var el = document.getElementById('random_game');
+
+  el('click', function() { spin('games_to_play'); });
+};
+
+main();
