@@ -1,20 +1,14 @@
 function select_random_game(elements) { 
-  for(var element in elements) { unhighlight(element); }
+  for(var i = 0, l = elements.length; i < l; i++) { elements[i].className = ''; }
 
   var index = Math.floor(Math.random() * elements.length) % elements.length;
 
-  return highlight(elements[index]);
+  elements[index].className = 'selected';
+
+  return elements[index];
 };
 
-function highlight(element) { if(element) { element.className = "selected"; } return element; };
-function unhighlight(element) { if(element) { element.className = ""; } return element; };
 function fib_next(a, b) { return [b, a+b]; };
-
-function spin(ul_id) {
-  var games = document.querySelectorAll("#" + ul_id + " LI");
-
-  next_spin(games, 1, 1);
-};
 
 function next_spin(elements, previous_timeout, next_timeout) {
   if (previous_timeout > 1000) { return; }
@@ -25,5 +19,11 @@ function next_spin(elements, previous_timeout, next_timeout) {
   setTimeout(function() {
     next_spin(elements, previous_timeout, next_timeout);
   }, previous_timeout);
+};
+
+function spin(ul_id) {
+  var games = document.querySelectorAll("#" + ul_id + " LI");
+
+  next_spin(games, 1, 1);
 };
 
