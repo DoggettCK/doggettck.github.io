@@ -1,4 +1,6 @@
 function select_random_game(elements) { 
+  for(var element in elements) { unhighlight(element); }
+
   var index = Math.floor(Math.random() * elements.length) % elements.length;
 
   return highlight(elements[index]);
@@ -21,7 +23,6 @@ function next_spin(elements, previous_timeout, next_timeout) {
   selected = select_random_game(elements);
 
   setTimeout(function() {
-    unhighlight(selected);
     next_spin(elements, previous_timeout, next_timeout);
   }, previous_timeout);
 };
