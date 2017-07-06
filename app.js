@@ -1,5 +1,5 @@
 function select_random_game(elements) { 
-  for(var i = 0, l = elements.length; i < l; i++) { elements[i].className = ''; }
+  for(var i = 0, l = elements.length; i < l; i++) { elements[i].className = 'label label-default'; }
 
   var index = Math.floor(Math.random() * elements.length) % elements.length;
 
