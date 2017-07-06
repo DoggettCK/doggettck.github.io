@@ -1,9 +1,9 @@
 function select_random_game(elements) { 
-  for(var i = 0, l = elements.length; i < l; i++) { elements[i].className = ''; }
+  for(var i = 0, l = elements.length; i < l; i++) { elements[i].firstChild.className = ''; }
 
   var index = Math.floor(Math.random() * elements.length) % elements.length;
 
-  elements[index].className = 'label label-success';
+  elements[index].firstChild.className = 'label label-success';
 };
 
 function fib_next(a, b) { return [b, a+b]; };
