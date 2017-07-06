@@ -29,7 +29,7 @@ function spin(ul_id) {
 function main() {
   var el = document.getElementById('random_game');
 
-  el('click', function() { spin('games_to_play'); });
+  el.addEventListener('click', function() { spin('games_to_play'); });
 };
 
 main();
