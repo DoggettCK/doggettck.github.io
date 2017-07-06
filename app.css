@@ -1,3 +1,8 @@
+.list-group-item {
+  padding: 0.1em;
+  border: none;
+}
+
 li {
   list-style-type: none;
 }
