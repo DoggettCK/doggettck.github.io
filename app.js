@@ -3,7 +3,7 @@ function select_random_game(elements) {
 
   var index = Math.floor(Math.random() * elements.length) % elements.length;
 
-  elements[index].className = 'selected';
+  elements[index].className = 'label label-success';
 
   return elements[index];
 };
