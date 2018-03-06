@@ -23,7 +23,8 @@ var build_top_games_element = function(header_text, games_list) {
   header.append(ol);
 
   for (var i = 0; i < games_list.length; i++) {
-    ol.append($("<li/>").text(games_list[i].title));
+    var li = $("<li/>").html($("<h4/>").text(games_list[i].title));
+    ol.append(li);
   }
 
   return header;
