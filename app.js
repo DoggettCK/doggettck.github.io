@@ -16,9 +16,10 @@ var sort_games = function() {
 };
 
 var build_top_games_element = function(header_text, games_list) {
-  var header = $("<h3/>").text(header_text).addClass("col-xs-6");
+  var header = $("<div/>").addClass("col-xs-6");
   var ol = $("<ol/>");
 
+  header.append($("<h3/>").text(header_text))
   header.append(ol);
 
   for (var i = 0; i < games_list.length; i++) {
@@ -32,7 +33,7 @@ var update_ui = function(top_n) {
   var sorted_games = sort_games();
   var total_hours = sorted_games.reduce(function(sum, game){ return sum + game.hours; }, 0);
   var shortest = sorted_games.slice(0, top_n);
-  var longest = sorted_games.slice(-top_n)
+  var longest = sorted_games.slice(-top_n).reverse();
 
   $("#games_to_play li").addClass("list-group-item col-xs-4");
   $("div.jumbotron").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
