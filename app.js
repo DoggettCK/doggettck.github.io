@@ -11,4 +11,4 @@ var total_hours = $("#games_to_play li").toArray().reduce(function(sum, element)
   return sum;
 }, 0);
 
-$("div.jumbotron").append($("h2").text("That's " + total_hours + " total hours of gaming to look forward to"));
+$("div.jumbotron").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to"));
