@@ -1,8 +1,8 @@
 var sort_games = function() {
   var hours_matcher_re = /^([^\(]+)\((\d+(\.\d+)?) hours\)/i;
 
-  return $("#games_to_play li").map(function(element){
-    var text = $(element).text();
+  return $("#games_to_play li").map(function(){
+    var text = $(this).text();
     var match = text.match(hours_matcher_re);
 
     return {
