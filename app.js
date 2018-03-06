@@ -6,7 +6,7 @@ var sort_games = function() {
     var match = text.match(hours_matcher_re);
 
     return {
-      title: match.input,
+      title: text,
       clean_title: match[1],
       hours: parseFloat(match[2])
     };
