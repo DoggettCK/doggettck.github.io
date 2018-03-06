@@ -28,7 +28,7 @@ var build_top_games_element = function(header_text, games_list) {
   return header;
 };
 
-function(top_n) {
+var update_ui = function(top_n) {
   var sorted_games = sort_games();
   var total_hours = sorted_games.reduce(function(sum, game){ return sum + game.hours; }, 0);
   var shortest = sorted_games.slice(0, top_n);
@@ -38,4 +38,6 @@ function(top_n) {
   $("div.jumbotron").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
   $("div.jumbotron").append(build_top_games_element("Shortest " + top_n + " games", shortest));
   $("div.jumbotron").append(build_top_games_element("Longest " + top_n + " games", longest));
-}(3);
+};
+
+update_ui(3);
