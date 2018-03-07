@@ -152,9 +152,15 @@ GAMES = [
 
 def main
   if ARGV.empty?
-    GAMES.each { |game| lookup(game); puts("--------")}
+    GAMES.each do |game|
+      lookup(game);
+      puts("----------")
+    end
   else
-    lookup(ARGV.first)
+    ARGV.each do |game|
+      lookup(game);
+      puts("----------")
+    end
   end
 end
 
