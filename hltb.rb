@@ -66,6 +66,31 @@ class HLTB
   end
 end
 
+class Game
+  attr_accessor :title, :path, :main, :extra, :complete, :average, :ps4, :vita
+
+  def initialize
+    @main, @extra, @complete, @average = [0.0] * 4
+    @ps4, @vita = [true] * 2
+  end
+
+  def to_html
+    attributes = [:main, :extra, :complete, :average, :ps4, :vita].map { |attr|
+      %(data-#{attr}="#{send(attr)}")
+    }
+    %(<li #{attributes.join(' ')}>#{title}</li>)
+  end
+
+  def to_stdout
+    lines = [title, path]
+    %i(main extra complete average).each do |type|
+      lines << ("#{type.to_s.capitalize}: #{send(type)} hours")
+    end
+    lines << ("\n")
+    lines.join("\n")
+  end
+end
+
 class GameLookup
   def initialize(game)
     @game = game
@@ -89,10 +114,10 @@ class GameLookup
   attr_reader :game
 
   def extract(data)
-    {
-      path: data.css('a').first.attributes['href'].value,
-      title: data.css('a').first.attributes['title'].value,
-      times: times(data)
+    Game.new.tap { |g|
+      g.path =  data.css('a').first.attributes['href'].value
+      g.title = data.css('a').first.attributes['title'].value
+      set_times(g, data)
     }
   end
 
@@ -102,16 +127,16 @@ class GameLookup
     nil
   end
 
-  def times(data)
-    return {} unless times_section(data)
-    time_section = data.css(times_section(data)).css('.center')
-    types.each_with_object({}) do |type, hash|
-      hash[type] = sanitize(time_section.shift.children.text) if time_section.any?
-    end
-  end
+  def set_times(g, data)
+    return g unless times_section(data)
 
-  def types
-    %i(main extra complete average)
+    time_section = data.css(times_section(data)).css('.center')
+
+    %i(main extra complete average).each do |type|
+      if time_section.any?
+        g.send("#{type}=", sanitize(time_section.shift.children.text))
+      end
+    end
   end
 
   def sanitize(string)
@@ -129,26 +154,27 @@ class GameLookup
   end
 
   def page
-    #@page ||= Nokogiri::HTML open('search-results.html')
     return unless valid?
     @page ||= Nokogiri::HTML(response.body)
   end
 end
 
+
+def format_html(game, i)
+  puts(game.to_html)
+end
+
+def format_stdout(game, i)
+  puts "#{i+1}: #{game.to_stdout}"
+end
+
 def lookup(title)
-  GameLookup.new(title).details.each_with_index do |game, i|
-    puts "#{i+1}: #{game[:title]}"
-    puts game[:path]
-    game[:times].each do |type, hours|
-      puts "#{type.to_s.capitalize}: #{hours} hours"
-    end
-    puts ''
-  end
+  GameLookup.new(title).details.each_with_index(&method(:format_html))
+  #GameLookup.new(title).details.each_with_index(&method(:format_stdout))
 end
 
 
-GAMES = [
-]
+GAMES = []
 
 def main
   if ARGV.empty?

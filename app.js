@@ -42,4 +42,4 @@ var update_ui = function(top_n) {
   $("div.jumbotron").append(build_top_games_element("Longest " + top_n + " games", longest));
 };
 
-update_ui(3);
+//update_ui(3);
