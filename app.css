@@ -5,10 +5,14 @@
 
 #summary_controls li {
   list-style: none;
-  padding-bottom: 1em;
-  padding-top: 1em;
+  padding: 0.5em 0.25em;
+}
+
+#summary_controls button {
+  width: 100% !important;
 }
 
 #summary img {
   width: 2em;
 }
+
