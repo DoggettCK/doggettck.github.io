@@ -16,8 +16,19 @@
     <div class="container">
       <div class="jumbotron container-fluid">
         <h2>PS4/Vita games I need to play</h2>
+        <div id="summary_controls">
+          <h3>Select the time measurement</h3>
+          <ul> 
+            <li class="col-md-3" data-time="main"><button class="btn btn-default">Main Story</button></li>
+            <li class="col-md-3" data-time="extra"><button class="btn btn-default">Main Story + Extras</button></li>
+            <li class="col-md-3" data-time="complete"><button class="btn btn-default">Complete</button></li>
+            <li class="col-md-3" data-time="average"><button class="btn btn-default">Average</button></li>
+          </ul>
+        </div>
+        <div id="summary"></div>
       </div>
       <ul id="games_to_play">
+        <li data-main="4.5" data-extra="5.5" data-complete="7.0" data-average="5.0" data-ps4="true" data-vita="false">ADR1FT</li>
         <li data-main="0.0" data-extra="0.0" data-complete="0.0" data-average="0.0" data-ps4="true" data-vita="false">Amnesia: Collection</li>
         <li data-main="6.0" data-extra="9.5" data-complete="17.0" data-average="7.5" data-ps4="true" data-vita="false">Assassin's Creed Chronicles: China</li>
         <li data-main="6.0" data-extra="7.0" data-complete="9.5" data-average="6.5" data-ps4="true" data-vita="false">Assassin's Creed Chronicles: India</li>
@@ -29,30 +40,31 @@
         <li data-main="8.5" data-extra="0.0" data-complete="0.0" data-average="0.0" data-ps4="true" data-vita="false">Batman: The Telltale Series</li>
         <li data-main="35.0" data-extra="45.0" data-complete="77.0" data-average="48.0" data-ps4="true" data-vita="false">Bloodborne</li>
         <li data-main="0.0" data-extra="0.0" data-complete="0.0" data-average="0.0" data-ps4="true" data-vita="true">Bombing Busters</li>
-        <li data-main="10.5" data-extra="12.5" data-complete="14.5" data-average="12.0" data-ps4="true" data-vita="true">Broken Sword 5: The Serpent's Curse</li>
+        <li data-main="10.5" data-extra="12.5" data-complete="14.5" data-average="12.0" data-ps4="false" data-vita="true">Broken Sword 5: The Serpent's Curse</li>
+        <li data-main="25.0" data-extra="46.0" data-complete="3.0" data-average="42.0" data-ps4="true" data-vita="true">Burly Men at Sea</li>
         <li data-main="13.5" data-extra="26.0" data-complete="55.0" data-average="23.0" data-ps4="true" data-vita="false">Burnout Paradise</li>
         <li data-main="3.5" data-extra="5.0" data-complete="6.5" data-average="3.5" data-ps4="true" data-vita="true">Claire</li>
-        <li data-main="14.5" data-extra="21.5" data-complete="38.5" data-average="19.0" data-ps4="true" data-vita="false">Crypt of the Necrodancer</li>
+        <li data-main="14.5" data-extra="21.5" data-complete="38.5" data-average="19.0" data-ps4="true" data-vita="true">Crypt of the Necrodancer</li>
         <li data-main="51.0" data-extra="79.5" data-complete="103.0" data-average="72.5" data-ps4="true" data-vita="true">Darkest Dungeon</li>
         <li data-main="20.0" data-extra="28.5" data-complete="43.5" data-average="25.0" data-ps4="true" data-vita="false">Darksiders II: Deathinitive Edition</li>
         <li data-main="4.5" data-extra="5.5" data-complete="6.0" data-average="5.0" data-ps4="true" data-vita="true">Day of the Tentacle: Remastered</li>
         <li data-main="1.5" data-extra="0.0" data-complete="0.0" data-average="0.0" data-ps4="true" data-vita="false">Dear Esther</li>
         <li data-main="15.0" data-extra="30.5" data-complete="44.0" data-average="29.5" data-ps4="true" data-vita="false">Deus Ex: Mankind Divided</li>
-        <li data-main="8.0" data-extra="12.0" data-complete="16.0" data-average="10.0" data-ps4="true" data-vita="true">Downwell</li>
+        <li data-main="8.0" data-extra="12.0" data-complete="16.0" data-average="10.0" data-ps4="false" data-vita="true">Downwell</li>
         <li data-main="45.5" data-extra="87.5" data-complete="127.0" data-average="88.0" data-ps4="true" data-vita="false">Dragon Age: Inquisition</li>
         <li data-main="5.0" data-extra="6.0" data-complete="9.0" data-average="5.5" data-ps4="true" data-vita="false">Everybody's Gone to the Rapture</li>
-        <li data-main="35.5" data-extra="40.5" data-complete="66.0" data-average="41.0" data-ps4="true" data-vita="true">Final Fantasy 6</li>
+        <li data-main="35.5" data-extra="40.5" data-complete="66.0" data-average="41.0" data-ps4="false" data-vita="true">Final Fantasy 6</li>
         <li data-main="38.5" data-extra="56.5" data-complete="89.0" data-average="54.5" data-ps4="true" data-vita="false">Final Fantasy 7</li>
-        <li data-main="6.0" data-extra="6.0" data-complete="7.0" data-average="6.5" data-ps4="true" data-vita="false">Forma.8</li>
+        <li data-main="6.0" data-extra="6.0" data-complete="7.0" data-average="6.5" data-ps4="true" data-vita="true">Forma.8</li>
         <li data-main="12.5" data-extra="0.0" data-complete="0.0" data-average="0.0" data-ps4="true" data-vita="false">Game of Thrones - A Telltale Games Series</li>
         <li data-main="23.5" data-extra="51.0" data-complete="0.0" data-average="29.0" data-ps4="true" data-vita="false">Grand Kingdom</li>
         <li data-main="20.5" data-extra="34.5" data-complete="56.5" data-average="33.5" data-ps4="true" data-vita="false">Gravity Rush 2</li>
-        <li data-main="1.5" data-extra="4.0" data-complete="9.0" data-average="5.5" data-ps4="true" data-vita="true">Hatoful Boyfriend</li>
+        <li data-main="1.5" data-extra="4.0" data-complete="9.0" data-average="5.5" data-ps4="false" data-vita="true">Hatoful Boyfriend</li>
         <li data-main="5.5" data-extra="7.0" data-complete="8.0" data-average="7.5" data-ps4="true" data-vita="false">Headlander</li>
         <li data-main="10.0" data-extra="25.5" data-complete="84.5" data-average="16.0" data-ps4="true" data-vita="false">Hitman</li>
-        <li data-main="5.0" data-extra="7.0" data-complete="14.5" data-average="6.5" data-ps4="true" data-vita="false">Hotline Miami</li>
-        <li data-main="9.0" data-extra="12.5" data-complete="29.0" data-average="9.5" data-ps4="true" data-vita="false">Hotline Miami 2: Wrong Number</li>
-        <li data-main="4.0" data-extra="5.0" data-complete="5.5" data-average="4.5" data-ps4="true" data-vita="true">HUE</li>
+        <li data-main="5.0" data-extra="7.0" data-complete="14.5" data-average="6.5" data-ps4="true" data-vita="true">Hotline Miami</li>
+        <li data-main="9.0" data-extra="12.5" data-complete="29.0" data-average="9.5" data-ps4="true" data-vita="true">Hotline Miami 2: Wrong Number</li>
+        <li data-main="4.0" data-extra="5.0" data-complete="5.5" data-average="4.5" data-ps4="false" data-vita="true">HUE</li>
         <li data-main="5.0" data-extra="8.0" data-complete="15.0" data-average="6.5" data-ps4="true" data-vita="false">Human: Fall Flat</li>
         <li data-main="2.0" data-extra="5.0" data-complete="11.0" data-average="3.0" data-ps4="true" data-vita="false">I Am Bread</li>
         <li data-main="10.0" data-extra="14.0" data-complete="20.0" data-average="14.5" data-ps4="true" data-vita="false">inFAMOUS: Second Son</li>
@@ -60,6 +72,7 @@
         <li data-main="3.5" data-extra="4.0" data-complete="4.5" data-average="4.0" data-ps4="true" data-vita="false">Inside</li>
         <li data-main="7.5" data-extra="20.0" data-complete="62.5" data-average="10.5" data-ps4="true" data-vita="false">Invisible, Inc.</li>
         <li data-main="2.0" data-extra="2.5" data-complete="5.0" data-average="2.0" data-ps4="true" data-vita="false">Journey</li>
+        <li data-main="5.5" data-extra="5.5" data-complete="6.5" data-average="5.5" data-ps4="true" data-vita="false">Jotun</li>
         <li data-main="17.0" data-extra="33.0" data-complete="57.5" data-average="31.5" data-ps4="true" data-vita="false">Just Cause 3</li>
         <li data-main="12.5" data-extra="36.5" data-complete="112.0" data-average="50.0" data-ps4="true" data-vita="false">Killing Floor 2</li>
         <li data-main="10.5" data-extra="11.5" data-complete="37.5" data-average="11.5" data-ps4="true" data-vita="false">Knack</li>
@@ -69,8 +82,8 @@
         <li data-main="19.0" data-extra="37.5" data-complete="60.5" data-average="37.5" data-ps4="true" data-vita="false">Mad Max (2015)</li>
         <li data-main="19.5" data-extra="63.5" data-complete="92.0" data-average="65.5" data-ps4="true" data-vita="false">Mass Effect: Andromeda</li>
         <li data-main="24.5" data-extra="0.0" data-complete="0.0" data-average="0.0" data-ps4="true" data-vita="false">Mega Man Legacy Collection</li>
-        <li data-main="13.0" data-extra="14.5" data-complete="22.0" data-average="13.5" data-ps4="true" data-vita="true">Metal Gear Solid 2: Sons of Liberty</li>
-        <li data-main="16.0" data-extra="19.0" data-complete="22.0" data-average="16.5" data-ps4="true" data-vita="false">Metal Gear Solid 3: Snake Eater</li>
+        <li data-main="13.0" data-extra="14.5" data-complete="22.0" data-average="13.5" data-ps4="false" data-vita="true">Metal Gear Solid 2: Sons of Liberty</li>
+        <li data-main="16.0" data-extra="19.0" data-complete="22.0" data-average="16.5" data-ps4="false" data-vita="true">Metal Gear Solid 3: Snake Eater</li>
         <li data-main="1.5" data-extra="6.5" data-complete="20.5" data-average="3.5" data-ps4="true" data-vita="false">Metal Gear Solid V: Ground Zeroes</li>
         <li data-main="17.5" data-extra="25.5" data-complete="36.0" data-average="26.0" data-ps4="true" data-vita="false">Middle-Earth: Shadow of Mordor - Game of the Year</li>
         <li data-main="8.5" data-extra="13.0" data-complete="36.5" data-average="11.5" data-ps4="true" data-vita="false">Mirror's Edge: Catalyst</li>
@@ -81,7 +94,7 @@
         <li data-main="2.0" data-extra="6.0" data-complete="7.5" data-average="2.0" data-ps4="true" data-vita="false">Ninja Pizza Girl</li>
         <li data-main="36.5" data-extra="44.0" data-complete="55.5" data-average="42.5" data-ps4="true" data-vita="false">Okami HD</li>
         <li data-main="4.0" data-extra="5.5" data-complete="13.0" data-average="5.0" data-ps4="true" data-vita="false">Oxenfree</li>
-        <li data-main="6.0" data-extra="17.5" data-complete="29.5" data-average="11.5" data-ps4="true" data-vita="false">PSYCHO-PASS: Mandatory Happiness</li>
+        <li data-main="6.0" data-extra="17.5" data-complete="29.5" data-average="11.5" data-ps4="false" data-vita="true">PSYCHO-PASS: Mandatory Happiness</li>
         <li data-main="9.5" data-extra="0.0" data-complete="0.0" data-average="0.0" data-ps4="true" data-vita="false">Pac-Man 256</li>
         <li data-main="4.0" data-extra="0.0" data-complete="0.0" data-average="4.0" data-ps4="true" data-vita="false">Pac-Man Championship Edition 2</li>
         <li data-main="95.5" data-extra="111.0" data-complete="164.0" data-average="108.0" data-ps4="true" data-vita="false">Persona 5</li>
@@ -97,28 +110,30 @@
         <li data-main="9.0" data-extra="10.5" data-complete="11.5" data-average="10.0" data-ps4="true" data-vita="false">Soma</li>
         <li data-main="6.0" data-extra="8.0" data-complete="10.5" data-average="8.0" data-ps4="true" data-vita="false">Song of the Deep</li>
         <li data-main="49.5" data-extra="82.5" data-complete="145.0" data-average="74.0" data-ps4="true" data-vita="false">Stardew Valley</li>
-        <li data-main="5.0" data-extra="6.5" data-complete="8.0" data-average="6.0" data-ps4="true" data-vita="false">SteamWorld Dig</li>
+        <li data-main="5.0" data-extra="6.5" data-complete="8.0" data-average="6.0" data-ps4="true" data-vita="true">SteamWorld Dig</li>
         <li data-main="10.5" data-extra="11.0" data-complete="11.5" data-average="11.0" data-ps4="true" data-vita="false">Tales from the Borderlands</li>
         <li data-main="4.0" data-extra="5.5" data-complete="7.0" data-average="5.0" data-ps4="true" data-vita="true">The Bridge</li>
         <li data-main="16.0" data-extra="19.0" data-complete="33.5" data-average="17.0" data-ps4="true" data-vita="false">The Evil Within</li>
         <li data-main="13.5" data-extra="18.0" data-complete="28.0" data-average="17.5" data-ps4="true" data-vita="false">The Evil Within 2</li>
         <li data-main="9.5" data-extra="15.0" data-complete="24.5" data-average="12.0" data-ps4="true" data-vita="false">The Flame in the Flood</li>
+        <li data-main="10.0" data-extra="23.5" data-complete="0.0" data-average="21.0" data-ps4="true" data-vita="true">The Swindle</li>
         <li data-main="15.5" data-extra="20.0" data-complete="27.0" data-average="20.5" data-ps4="true" data-vita="false">The Talos Principle</li>
-        <li data-main="2.5" data-extra="3.0" data-complete="4.0" data-average="3.0" data-ps4="true" data-vita="false">The Unfinished Swan</li>
+        <li data-main="2.5" data-extra="3.0" data-complete="4.0" data-average="3.0" data-ps4="true" data-vita="true">The Unfinished Swan</li>
         <li data-main="49.0" data-extra="127.0" data-complete="186.0" data-average="134.0" data-ps4="true" data-vita="false">The Witcher 3: Wild Hunt</li>
         <li data-main="17.5" data-extra="25.5" data-complete="46.5" data-average="23.5" data-ps4="true" data-vita="false">The Witness</li>
         <li data-main="9.0" data-extra="0.0" data-complete="0.0" data-average="0.0" data-ps4="true" data-vita="false">The Wolf Among Us</li>
         <li data-main="10.5" data-extra="22.0" data-complete="42.5" data-average="17.0" data-ps4="true" data-vita="false">Thief</li>
         <li data-main="10.5" data-extra="14.0" data-complete="14.5" data-average="12.5" data-ps4="true" data-vita="false">Thimbleweed Park</li>
+        <li data-main="18.5" data-extra="20.5" data-complete="23.5" data-average="20.0" data-ps4="true" data-vita="false">This is the Police</li>
         <li data-main="6.0" data-extra="8.0" data-complete="13.0" data-average="6.5" data-ps4="true" data-vita="false">Titanfall 2</li>
         <li data-main="6.0" data-extra="8.0" data-complete="15.5" data-average="7.5" data-ps4="true" data-vita="false">Transistor</li>
         <li data-main="20.5" data-extra="28.0" data-complete="71.0" data-average="25.5" data-ps4="true" data-vita="false">Tropico 5</li>
-        <li data-main="2.0" data-extra="2.5" data-complete="6.0" data-average="2.0" data-ps4="true" data-vita="false">Uncanny Valley</li>
+        <li data-main="2.0" data-extra="2.5" data-complete="6.0" data-average="2.0" data-ps4="true" data-vita="true">Uncanny Valley</li>
         <li data-main="15.0" data-extra="17.5" data-complete="27.5" data-average="16.0" data-ps4="true" data-vita="false">Uncharted 4: A Thief's End</li>
         <li data-main="27.0" data-extra="31.0" data-complete="61.0" data-average="29.5" data-ps4="true" data-vita="false">Uncharted: The Nathan Drake Collection</li>
         <li data-main="8.0" data-extra="9.0" data-complete="18.0" data-average="8.5" data-ps4="true" data-vita="false">Until Dawn</li>
         <li data-main="2.0" data-extra="5.0" data-complete="0.0" data-average="2.5" data-ps4="true" data-vita="false">Until Dawn: Rush of Blood</li>
-        <li data-main="4.0" data-extra="4.5" data-complete="0.0" data-average="4.5" data-ps4="true" data-vita="false">Wanted Corp.</li>
+        <li data-main="4.0" data-extra="4.5" data-complete="0.0" data-average="4.5" data-ps4="false" data-vita="true">Wanted Corp.</li>
         <li data-main="10.0" data-extra="15.5" data-complete="29.5" data-average="12.5" data-ps4="true" data-vita="false">Wolfenstein II: The New Colossus</li>
         <li data-main="11.5" data-extra="15.5" data-complete="24.5" data-average="13.5" data-ps4="true" data-vita="false">Wolfenstein: The New Order</li>
         <li data-main="6.0" data-extra="8.5" data-complete="15.5" data-average="7.5" data-ps4="true" data-vita="false">Wolfenstein: The Old Blood</li>

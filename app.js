@@ -31,27 +31,41 @@ var build_top_games_element = function(time, header_text, games_list) {
   var header = $("<div/>").addClass("col-xs-6");
   var ol = $("<ol/>");
 
-  header.append($("<h3/>").text(header_text + " (" + time + ")"))
+  header.append($("<h3/>").text(header_text))
   header.append(ol);
 
   for (var i = 0; i < games_list.length; i++) {
-    var li = $("<li/>").html($("<h4/>").text(games_list[i]['title'] + " (" + games_list[i][time] + " hours)"));
+    var game = games_list[i];
+    var li = $("<li/>");
+    var contents = $("<h4/>").text(game['title'] + " (" + game[time] + " hours)");
+    var systems = game['systems'];
+
+    $.each(systems, function(i, system) {
+      contents.append($("<img/>").attr({src: "images/" + system + ".svg"}));
+    });
+    
+    li.append(contents);
     ol.append(li);
   }
 
   return header;
 };
 
-var update_ui = function(time, top_n) {
+var update_ui = function(time, time_text, top_n) {
+  $("#summary").empty();
   var sorted_games = sort_games(time);
   var total_hours = sorted_games.reduce(function(sum, game){ return sum + game[time]; }, 0);
   var shortest = sorted_games.slice(0, top_n);
   var longest = sorted_games.slice(-top_n).reverse();
 
   $("#games_to_play li").addClass("list-group-item col-xs-4");
-  $("div.jumbotron").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
-  $("div.jumbotron").append(build_top_games_element(time, "Shortest " + top_n + " games", shortest));
-  $("div.jumbotron").append(build_top_games_element(time, "Longest " + top_n + " games", longest));
+  $("#summary").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
+  $("#summary").append(build_top_games_element(time, "Shortest " + top_n + " games (" + time_text + ")", shortest));
+  $("#summary").append(build_top_games_element(time, "Longest " + top_n + " games (" + time_text + ")", longest));
 };
 
-update_ui('main', 3);
+$("#summary_controls li").click(function() {
+  update_ui($(this).data('time'), $(this).text(), 3);
+});
+
+$("#summary_controls li:first").click();
