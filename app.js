@@ -59,10 +59,25 @@ var update_ui = function(time, time_text, top_n) {
   var longest = sorted_games.slice(-top_n).reverse();
 
   $("#games_to_play li").addClass("list-group-item col-xs-4");
+  $("#games_to_play li span").each(function() {
+    var game = $(this).parent();
+    $(this).text(" (" + game.data(time) + " hours)");
+  });
   $("#summary").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
   $("#summary").append(build_top_games_element(time, "Shortest " + top_n + " games (" + time_text + ")", shortest));
   $("#summary").append(build_top_games_element(time, "Longest " + top_n + " games (" + time_text + ")", longest));
 };
+
+$("#games_to_play li").each(function() {
+  var consoles = systems($(this));
+  var li = $(this);
+  li.append($("<span/>"));
+
+  $.each(consoles, function(i, system) {
+    var img = $("<img/>").attr({src: "images/" + system + ".svg"});
+    li.append(img);
+  });
+});
 
 $("#summary_controls li").click(function() {
   update_ui($(this).data('time'), $(this).text(), 3);

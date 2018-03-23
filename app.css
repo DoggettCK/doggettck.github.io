@@ -12,7 +12,7 @@
   width: 100% !important;
 }
 
-#summary img {
+#summary img, #games_to_play img {
   width: 2em;
 }
 
