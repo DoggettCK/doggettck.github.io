@@ -1,6 +1,7 @@
 var games = function() {
   return $("#games_to_play li").map(function(){
-    var text = $(this).text();
+    // .text() will get the hours from the main list, and show up twice
+    var text = $(this).contents()[0].nodeValue;
 
     return {
       title: text,
