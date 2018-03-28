@@ -1,7 +1,6 @@
 var games = function() {
   return $("#games_to_play li").map(function(){
-    // .text() will get the hours from the main list, and show up twice
-    var text = $(this).contents()[0].nodeValue;
+    var text = $(this).text();
 
     return {
       title: text,
@@ -54,15 +53,16 @@ var build_top_games_element = function(time, header_text, games_list) {
 
 var update_ui = function(time, time_text, top_n) {
   $("#summary").empty();
+  $("#games_to_play li span").remove();
+
   var sorted_games = sort_games(time);
   var total_hours = sorted_games.reduce(function(sum, game){ return sum + game[time]; }, 0);
   var shortest = sorted_games.slice(0, top_n);
   var longest = sorted_games.slice(-top_n).reverse();
 
   $("#games_to_play li").addClass("list-group-item col-xs-4");
-  $("#games_to_play li span").each(function() {
-    var game = $(this).parent();
-    $(this).text(" (" + game.data(time) + " hours)");
+  $("#games_to_play li").each(function() {
+    $(this).append($("<span/>").text(" (" + $(this).data(time) + " hours)"));
   });
   $("#summary").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
   $("#summary").append(build_top_games_element(time, "Shortest " + top_n + " games (" + time_text + ")", shortest));
