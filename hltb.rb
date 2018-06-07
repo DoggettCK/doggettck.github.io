@@ -71,14 +71,26 @@ class Game
 
   def initialize
     @main, @extra, @complete, @average = [0.0] * 4
-    @ps4, @vita = [true] * 2
+  end
+
+  def title_symbol
+    title
+      .gsub(/[^a-zA-Z0-9]/, '')
+      .gsub(/::/, '/')
+      .gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2')
+      .gsub(/([a-z\d])([A-Z])/,'\1_\2')
+      .tr("-", "_")
+      .downcase
   end
 
   def to_html
-    attributes = [:main, :extra, :complete, :average, :ps4, :vita].map { |attr|
-      %(data-#{attr}="#{send(attr)}")
-    }
-    %(<li #{attributes.join(' ')}>#{title}</li>)
+    %(<li id="#{title_symbol}">#{title}</li>)
+  end
+
+  def to_js
+    attributes = [:main, :extra, :complete, :average].map { |attr| "\"#{attr}\": #{send(attr)}" }.join(", ")
+
+    "\"#{title_symbol}\": {#{attributes}, \"systems\": [\"ps4\", \"vita\"]},"
   end
 
   def to_stdout
@@ -162,6 +174,8 @@ end
 
 def format_html(game, i)
   puts(game.to_html)
+  puts(game.to_js)
+  puts("------------")
 end
 
 def format_stdout(game, i)
@@ -173,19 +187,18 @@ def lookup(title)
   #GameLookup.new(title).details.each_with_index(&method(:format_stdout))
 end
 
-
 GAMES = []
 
 def main
   if ARGV.empty?
     GAMES.each do |game|
       lookup(game);
-      puts("----------")
+      puts("==========")
     end
   else
     ARGV.each do |game|
       lookup(game);
-      puts("----------")
+      puts("==========")
     end
   end
 end
