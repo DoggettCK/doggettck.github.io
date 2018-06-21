@@ -128,6 +128,8 @@ const games = {
 }
 
 var sort_games = function(time) {
+  var replays = $("#games_to_replay li").map(function(){ return $(this).attr("id"); }).toArray();
+
   var list = $.map(games, function(k, v){
     k['title'] = v;
 
@@ -135,6 +137,9 @@ var sort_games = function(time) {
   });
 
   return $(list).filter(function(i, game){
+    if (replays.includes(game['title'])) {
+      return false;
+    }
     return game[time] > 0.0;
   }).sort(function(a, b){
     return a[time] - b[time];
@@ -168,40 +173,43 @@ var build_top_games_element = function(time, header_text, games_list) {
 
 var update_ui = function(time, time_text, top_n) {
   $("#summary").empty();
-  $("#games_to_play li span").remove();
 
   var sorted_games = sort_games(time);
   var total_hours = sorted_games.reduce(function(sum, game){ return sum + game[time]; }, 0);
   var shortest = sorted_games.slice(0, top_n);
   var longest = sorted_games.slice(-top_n).reverse();
 
-  $("#games_to_play li").addClass("list-group-item col-xs-4");
-  $("#games_to_play li").each(function() {
-    var game = games[$(this).attr('id')];
-    var game_time = game[time];
-
-    $(this).append($("<span/>").text(" (" + game_time + " hours)"));
-  });
+  $("#games_to_play li").each(function(){ update_list_item(this, time) });
+  $("#games_to_replay li").each(function(){ update_list_item(this, time) });
   $("#summary").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
   $("#summary").append(build_top_games_element(time, "Shortest " + top_n + " games (" + time_text + ")", shortest));
   $("#summary").append(build_top_games_element(time, "Longest " + top_n + " games (" + time_text + ")", longest));
 };
 
-var main = function() {
-  $("#games_to_play li").each(function() {
-    var li = $(this);
-    var title = li.attr('id');
+var update_list_item = function(el, time) {
+  var li = $(el);
+  var title = li.attr('id');
+  var game = games[title];
+  var game_time = game[time];
 
-    li.append($("<span/>"));
+  li.children("span, img").remove();
 
-    $.each(games[title]['systems'], function(i, system) {
-      var img = $("<img/>").attr({src: "images/" + system + ".svg"});
-      li.append(img);
-    });
+  li.addClass("list-group-item col-xs-4");
+  li.append($("<span/>"));
+
+  $.each(games[title]['systems'], function(i, system) {
+    var img = $("<img/>").attr({src: "images/" + system + ".svg"});
+    li.append(img);
   });
 
+  li.append($("<span/>").text(" (" + game_time + " hours)"));
+};
+
+var main = function() {
   $("#summary_controls li").click(function() {
-    update_ui($(this).data('time'), $(this).text(), 3);
+    var button = $(this);
+
+    update_ui(button.data('time'), button.text(), 3);
   });
 
   $("#summary_controls li:first").click();
