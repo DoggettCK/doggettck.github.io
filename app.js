@@ -60,7 +60,6 @@ const games = {
   "knack": {"average": 11.5, "complete": 37.5, "extra": 11.5, "main": 10.5, "systems": ["ps4"]},
   "lara_croft_go": {"main": 3.5, "extra": 5.5, "complete": 6.5, "average": 5.5, "systems": ["ps4", "vita"]},
   "life_is_strange": {"average": 15.5, "complete": 18, "extra": 16, "main": 14, "systems": ["ps4"]},
-  "life_is_strange_before_the_storm": {"average": 11, "complete": 11.5, "extra": 11.5, "main": 10, "systems": ["ps4"]},
   "linelight": {"average": 8, "complete": 11.5, "extra": 8.5, "main": 4, "systems": ["ps4"]},
   "mad_max_2015": {"average": 37.5, "complete": 60.5, "extra": 37.5, "main": 19, "systems": ["ps4"]},
   "mafia_iii": {"main": 21.5, "extra": 32.0, "complete": 46.5, "average": 0.0, "systems": ["ps4"]},
@@ -146,6 +145,7 @@ var sort_games = function(time) {
     if (replays.includes(game['title'])) {
       return false;
     }
+    if (game['systems'][0] == ['ps4'] && game['systems'].length == 1) { return false; }
     return game[time] > 0.0;
   }).sort(function(a, b){
     return a[time] - b[time];
