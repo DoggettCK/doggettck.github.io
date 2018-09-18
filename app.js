@@ -149,7 +149,6 @@ var sort_games = function(time) {
     if (replays.includes(game['title'])) {
       return false;
     }
-    if (game['systems'][0] == ['ps4'] && game['systems'].length == 1) { return false; }
     return game[time] > 0.0;
   }).sort(function(a, b){
     return a[time] - b[time];
