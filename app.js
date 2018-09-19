@@ -22,7 +22,6 @@ const games = {
   "darkest_dungeon": {"average": 72.5, "complete": 103, "extra": 79.5, "main": 51, "systems": ["ps4", "vita"]},
   "darksiders_ii_deathinitive_edition": {"average": 25, "complete": 43.5, "extra": 28.5, "main": 20, "systems": ["ps4"]},
   "day_of_the_tentacle_remastered": {"average": 5, "complete": 6, "extra": 5.5, "main": 4.5, "systems": ["ps4", "vita"]},
-  "dead_by_daylight": {"main": 1055.0, "extra": 173.0, "complete": 0.0, "average": 0.0, "systems": ["ps4"]},
   "dead_cells": {"main": 12.5, "extra": 26.0, "complete": 46.0, "average": 0.0, "systems": ["ps4"]},
   "dear_esther": {"average": 1.5, "complete": 1.5, "extra": 1.5, "main": 1.5, "systems": ["ps4"]},
   "destiny2": {"main": 12.0, "extra": 24.0, "complete": 82.5, "average": 0.0, "systems": ["ps4"]},
