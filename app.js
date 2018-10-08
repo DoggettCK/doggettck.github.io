@@ -10,6 +10,7 @@ const games = {
   "assassins_creed_chronicles_russia": {"average": 7, "complete": 11.5, "extra": 8, "main": 6, "systems": ["ps4"]},
   "assassins_creed_freedom_cry": {"average": 5.5, "complete": 7, "extra": 6, "main": 4.5, "systems": ["ps4"]},
   "assassins_creed_syndicate": {"average": 31.5, "complete": 51.5, "extra": 32, "main": 17.5, "systems": ["ps4"]},
+  "assassins_creed_origins": {"main": 43, "extra": 68, "complete": 103.5, "average": 43, "systems": ["ps4"]},
   "batman_arkham_asylum": {"average": 14.5, "complete": 25.5, "extra": 16, "main": 11, "systems": ["ps4", "vita"]},
   "batman_arkham_city": {"average": 20.5, "complete": 53.5, "extra": 23, "main": 13.5, "systems": ["ps4", "vita"]},
   "batman_the_telltale_series": {"average": 8.5, "complete": 8.5, "extra": 8.5, "main": 8.5, "systems": ["ps4"]},
@@ -138,7 +139,7 @@ const games = {
 }
 
 var sort_games = function(time) {
-  var replays = $("#games_to_replay li").map(function(){ return $(this).attr("id"); }).toArray();
+  var replays = $("#games_to_replay div").map(function(){ return $(this).attr("id"); }).toArray();
 
   var list = $.map(games, function(k, v){
     k['title'] = v;
@@ -189,30 +190,27 @@ var update_ui = function(time, time_text, top_n) {
   var shortest = sorted_games.slice(0, top_n);
   var longest = sorted_games.slice(-top_n).reverse();
 
-  $("#games_to_play li").each(function(){ update_list_item(this, time) });
-  $("#games_to_replay li").each(function(){ update_list_item(this, time) });
+  $("#games_to_play div").each(function(){ update_list_item(this, time) });
+  $("#games_to_replay div").each(function(){ update_list_item(this, time) });
   $("#summary").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
   $("#summary").append(build_top_games_element(time, "Shortest " + top_n + " games (" + time_text + ")", shortest));
   $("#summary").append(build_top_games_element(time, "Longest " + top_n + " games (" + time_text + ")", longest));
 };
 
 var update_list_item = function(el, time) {
-  var li = $(el);
-  var title = li.attr('id');
+  var item = $(el);
+  var title = item.attr('id');
   var game = games[title];
   var game_time = game[time];
 
-  li.children("span, img").remove();
-
-  li.addClass("list-group-item col-xs-4");
-  li.append($("<span/>"));
+  item.children("i, img").remove();
 
   $.each(games[title]['systems'], function(i, system) {
     var img = $("<img/>").attr({src: "images/" + system + ".svg"});
-    li.append(img);
+    item.append(img);
   });
 
-  li.append($("<span/>").text(" (" + game_time + " hours)"));
+  item.append($("<i/>").text(" (" + game_time + " hours)"));
 };
 
 var main = function() {

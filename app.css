@@ -12,6 +12,6 @@
   width: 100% !important;
 }
 
-#summary img, li img {
+#summary img, div.col-md-4 img {
   width: 2em;
 }
