@@ -98,6 +98,7 @@ const games = {
   "soma": {"average": 10, "complete": 11.5, "extra": 10.5, "main": 9, "systems": ["ps4"]},
   "song_of_the_deep": {"average": 8, "complete": 10.5, "extra": 8, "main": 6, "systems": ["ps4"]},
   "space_hulk": {"main": 10.0, "extra": 16.5, "complete": 20.5, "average": 0.0, "systems": ["vita"]},
+  "spider_man2018": {"main": 16.0, "extra": 24.0, "complete": 30.5, "average": 0.0, "systems": ["ps4"]},
   "squares": {"average": 0, "complete": 0, "extra": 0, "main": 0, "systems": ["vita"]},
   "star_wars_battlefront_ii2017": {"main": 6.0, "extra": 7.5, "complete": 37.0, "average": 0.0, "systems": ["ps4"]},
   "steam_world_dig": {"average": 6, "complete": 8, "extra": 6.5, "main": 5, "systems": ["ps4", "vita"]},

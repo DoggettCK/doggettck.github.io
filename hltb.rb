@@ -84,7 +84,7 @@ class Game
   end
 
   def to_html
-    %(<li id="#{title_symbol}">#{title}</li>)
+    %(<div class="col-md-4" id="#{title_symbol}">#{title}</div>)
   end
 
   def to_js
