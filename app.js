@@ -10,7 +10,6 @@ const games = {
   "assassins_creed_chronicles_russia": {"average": 7, "complete": 11.5, "extra": 8, "main": 6, "systems": ["ps4"]},
   "assassins_creed_freedom_cry": {"average": 5.5, "complete": 7, "extra": 6, "main": 4.5, "systems": ["ps4"]},
   "assassins_creed_syndicate": {"average": 31.5, "complete": 51.5, "extra": 32, "main": 17.5, "systems": ["ps4"]},
-  "assassins_creed_origins": {"main": 43, "extra": 68, "complete": 103.5, "average": 43, "systems": ["ps4"]},
   "batman_arkham_asylum": {"average": 14.5, "complete": 25.5, "extra": 16, "main": 11, "systems": ["ps4", "vita"]},
   "batman_arkham_city": {"average": 20.5, "complete": 53.5, "extra": 23, "main": 13.5, "systems": ["ps4", "vita"]},
   "batman_the_telltale_series": {"average": 8.5, "complete": 8.5, "extra": 8.5, "main": 8.5, "systems": ["ps4"]},
