@@ -16,6 +16,7 @@ const games = {
   "beyond_two_souls": {"average": 11.5, "complete": 27, "extra": 12, "main": 10.5, "systems": ["ps4", "vita"]},
   "bloodborne": {"average": 48, "complete": 77, "extra": 45, "main": 35, "systems": ["ps4"]},
   "broken_sword_5_the_serpents_curse": {"average": 12, "complete": 14.5, "extra": 12.5, "main": 10.5, "systems": ["vita"]},
+  "bulletstorm": {"main": 7.5, "extra": 9.5, "complete": 15.5, "average": 0.0, "systems": ["ps4"]},
   "callof_duty_black_ops_iii": {"main": 9.0, "extra": 13.5, "complete": 45.0, "average": 11.5, "systems": ["ps4"]},
   "childof_light": {"main": 11.0, "extra": 13.5, "complete": 15.5, "average": 13.0, "systems": ["ps4"]},
   "claire": {"average": 3.5, "complete": 6.5, "extra": 5, "main": 3.5, "systems": ["ps4", "vita"]},
@@ -41,7 +42,6 @@ const games = {
   "grand_kingdom": {"average": 29, "complete": 51, "extra": 51, "main": 23.5, "systems": ["ps4"]},
   "grand_theft_auto_v": {"main": 31.0, "extra": 46.5, "complete": 78.5, "average": 0.0, "systems": ["ps4"]},
   "gravity_rush_2": {"average": 33.5, "complete": 56.5, "extra": 34.5, "main": 20.5, "systems": ["ps4"]},
-  "hatoful_boyfriend": {"average": 5.5, "complete": 9, "extra": 4, "main": 1.5, "systems": ["vita"]},
   "headlander": {"average": 7.5, "complete": 8, "extra": 7, "main": 5.5, "systems": ["ps4"]},
   "heavy_rain": {"main": 10.0, "extra": 12.0, "complete": 21.0, "average": 10.5, "systems": ["ps4", "vita"]},
   "hitman": {"average": 16, "complete": 84.5, "extra": 25.5, "main": 10, "systems": ["ps4"]},
@@ -89,6 +89,7 @@ const games = {
   "rime": {"average": 6, "complete": 9.5, "extra": 6.5, "main": 5.5, "systems": ["ps4"]},
   "rocket_league": {"average": 13.5, "complete": 29.5, "extra": 12, "main": 4, "systems": ["ps4"]},
   "rocksmith_2014": {"average": 126, "complete": 153, "extra": 112, "main": 81, "systems": ["ps4"]},
+  "roundabout": {"main": 2.5, "extra": 4.0, "complete": 7.0, "average": 0.0, "systems": ["ps4", "vita"]},
   "shadow_complex_remastered": {"average": 6.5, "complete": 9.5, "extra": 7, "main": 5, "systems": ["ps4"]},
   "shadow_warrior": {"average": 12, "complete": 14.5, "extra": 12, "main": 11, "systems": ["ps4"]},
   "sherlock_holmes_crimes_and_punishments": {"average": 13.5, "complete": 14.5, "extra": 14, "main": 12, "systems": ["ps4"]},
@@ -135,6 +136,7 @@ const games = {
   "worms_battlegrounds": {"average": 19, "complete": 21, "extra": 21, "main": 14.5, "systems": ["ps4"]},
   "xcom_2": {"average": 40.5, "complete": 71, "extra": 42.5, "main": 30.5, "systems": ["ps4"]},
   "yakuza0": {"main": 31.0, "extra": 64.0, "complete": 137.0, "average": 57.5, "systems": ["ps4"]},
+  "yakuza_kiwami": {"main": 17.5, "extra": 32.0, "complete": 88.0, "average": 0.0, "systems": ["ps4"]},
   "zero_escape_zero_time_dilemma": {"average": 22, "complete": 22, "extra": 21.5, "main": 21.5, "systems": ["ps4"]}
 }
 
