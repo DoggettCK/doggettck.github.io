@@ -127,6 +127,7 @@ const games = {
   "unravel": {"average": 7, "complete": 11.5, "extra": 7.5, "main": 6, "systems": ["vita"]},
   "until_dawn": {"average": 8.5, "complete": 18, "extra": 9, "main": 8, "systems": ["ps4"]},
   "until_dawn_rush_of_blood": {"average": 2.5, "complete": 5, "extra": 5, "main": 2, "systems": ["ps4"]},
+  "va11_halla": {"main": 10.5, "extra": 13.0, "complete": 18.0, "average": 0.0, "syst
   "valiant_hearts_the_great_war": {"main": 6.5, "extra": 7.5, "complete": 9.0, "average": 7.0, "systems": ["ps4"]},
   "wanted_corp": {"average": 4.5, "complete": 4.5, "extra": 4.5, "main": 4, "systems": ["vita"]},
   "wizard_of_legend": {"average": 0, "complete": 0, "extra": 0, "main": 0, "systems": ["ps4"]},
