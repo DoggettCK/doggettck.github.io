@@ -95,6 +95,7 @@ const games = {
   "rime": {"average": 6, "complete": 9.5, "extra": 6.5, "main": 5.5, "systems": ["ps4"]},
   "rocket_league": {"average": 13.5, "complete": 29.5, "extra": 12, "main": 4, "systems": ["ps4"]},
   "rocksmith_2014": {"average": 126, "complete": 153, "extra": 112, "main": 81, "systems": ["ps4"]},
+  "rogue_legacy": {"main": 16.5, "extra": 26.0, "complete": 37.5, "average": 0.0, "systems": ["ps4", "vita"]},
   "roundabout": {"main": 2.5, "extra": 4.0, "complete": 7.0, "average": 0.0, "systems": ["ps4", "vita"]},
   "shadow_complex_remastered": {"average": 6.5, "complete": 9.5, "extra": 7, "main": 5, "systems": ["ps4"]},
   "shadow_warrior": {"average": 12, "complete": 14.5, "extra": 12, "main": 11, "systems": ["ps4"]},
