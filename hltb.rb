@@ -6,7 +6,7 @@ require 'net/https'
 require 'nokogiri'
 
 class HLTB
-  URL = 'https://howlongtobeat.com/search_main.php?&page=1'.freeze
+  URL = 'https://howlongtobeat.com/search_results.php?&page=1'.freeze
 
   def initialize(game)
     @game = game
