@@ -95,7 +95,6 @@ const games = {
   "qube_directors_cut": {"main": 3.0, "extra": 3.5, "complete": 6.5, "average": 0.0, "systems": ["ps4"]},
   "ratchet_clank_2016": {"average": 12.5, "complete": 20.5, "extra": 12.5, "main": 10, "systems": ["ps4"]},
   "rayman_legends": {"average": 14, "complete": 27.5, "extra": 15, "main": 9.5, "systems": ["ps4", "vita"]},
-  "red_dead_redemption2": {"main": 43.5, "extra": 72.0, "complete": 136.0, "average": 0.0, "systems": ["ps4"]},
   "rime": {"average": 6, "complete": 9.5, "extra": 6.5, "main": 5.5, "systems": ["ps4"]},
   "rocket_league": {"average": 13.5, "complete": 29.5, "extra": 12, "main": 4, "systems": ["ps4"]},
   "rocksmith_2014": {"average": 126, "complete": 153, "extra": 112, "main": 81, "systems": ["ps4"]},
