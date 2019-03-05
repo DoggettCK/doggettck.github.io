@@ -67,7 +67,7 @@ const games = {
   "mad_max_2015": {"average": 37.5, "complete": 60.5, "extra": 37.5, "main": 19, "systems": ["ps4"]},
   "mafia_iii": {"main": 21.5, "extra": 32.0, "complete": 46.5, "average": 0.0, "systems": ["ps4"]},
   "mass_effect_andromeda": {"average": 65.5, "complete": 92, "extra": 63.5, "main": 19.5, "systems": ["ps4"]},
-  "mega_man11": {"main": 4.5, "extra": 5.0, "complete": 8.5, "average": 0.0, "systems ": ["ps4"]},
+  "mega_man11": {"main": 4.5, "extra": 5.0, "complete": 8.0, "average": 0.0, "systems": ["ps4"]},
   "mega_man_legacy_collection": {"average": 24.5, "complete": 24.5, "extra": 24.5, "main": 24.5, "systems": ["ps4"]},
   "metal_gear_solid_2_sons_of_liberty": {"average": 13.5, "complete": 22, "extra": 14.5, "main": 13, "systems": ["vita"]},
   "metal_gear_solid_3_snake_eater": {"average": 16.5, "complete": 22, "extra": 19, "main": 16, "systems": ["vita"]},
