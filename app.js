@@ -74,7 +74,7 @@ const games = {
   "mirrors_edge_catalyst": {"average": 11.5, "complete": 36.5, "extra": 13, "main": 8.5, "systems": ["ps4"]},
   "ms_pac_man": {"average": 1.5, "complete": 2.5, "extra": 2, "main": 1, "systems": ["ps4"]},
   "never_alone": {"average": 3.5, "complete": 4, "extra": 3.5, "main": 3, "systems": ["ps4"]},
-  "nier_automata": {"main": 20.0, "extra": 37.5, "complete": 61.0, "average": 0.0, "systems": ["ps4"]},
+  "callof_duty_modern_warfare_remastered": {"main": 6.0, "extra": 7.5, "complete": 15.5, "average": 0.0, "systems": ["ps4"]},
   "ninja_pizza_girl": {"average": 2, "complete": 7.5, "extra": 6, "main": 2, "systems": ["ps4"]},
   "okami_hd": {"average": 42.5, "complete": 55.5, "extra": 44, "main": 36.5, "systems": ["ps4"]},
   "onrush": {"main": 12.5, "extra": 16.0, "complete": 30.0, "average": 0.0, "systems": ["ps4"]},
