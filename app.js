@@ -104,6 +104,7 @@ const games = {
   "steam_world_dig": {"average": 6, "complete": 8, "extra": 6.5, "main": 5, "systems": ["ps4", "vita"]},
   "steam_world_dig2": {"main": 7.0, "extra": 10.0, "complete": 13.5, "average": 0.0, "systems": ["ps4", "vita"]},
   "steep": {"main": 11.0, "extra": 24.5, "complete": 36.0, "average": 0.0, "systems": ["ps4"]},
+  "sundered": {"main": 13.0, "extra": 15.0, "complete": 17.0, "average": 0.0, "systems": ["ps4"]},
   "the_bridge": {"average": 5, "complete": 7, "extra": 5.5, "main": 4, "systems": ["ps4", "vita"]},
   "the_evil_within": {"average": 17, "complete": 33.5, "extra": 19, "main": 16, "systems": ["ps4"]},
   "the_evil_within_2": {"average": 17.5, "complete": 28, "extra": 18, "main": 13.5, "systems": ["ps4"]},
