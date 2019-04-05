@@ -3,6 +3,8 @@ const games = {
   "99_vidas": {"average": 15, "complete": 27.5, "extra": 27.5, "main": 2.5, "systems": ["ps4", "vita"]},
   "absolver": {"main": 5.0, "extra": 6.0, "complete": 0.0, "average": 0.0, "systems": ["ps4"]},
   "adr1ft": {"average": 5, "complete": 7, "extra": 5.5, "main": 4.5, "systems": ["ps4"]},
+  "conan_exiles": {"main": 0.0, "extra": 100.0, "complete": 208.0, "average": 0.0, "systems": ["ps4"]},
+  "the_surge": {"main": 19.5, "extra": 28.0, "complete": 43.0, "average": 0.0, "systems": ["ps4"]},
   "amnesia_a_machine_for_pigs": {"average": 4.5, "complete": 6, "extra": 5, "main": 4, "systems": ["ps4"]},
   "amnesia_the_dark_descent": {"average": 8, "complete": 10, "extra": 9, "main": 8, "systems": ["ps4"]},
   "another_world20th_anniversary": {"main": 2.5, "extra": 0.0, "complete": 0.0, "average": 0.0, "systems": ["vita"]},
