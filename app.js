@@ -125,7 +125,6 @@ const games = {
   "trials_fusion": {"average": 11.5, "complete": 92, "extra": 27, "main": 6.5, "systems": ["ps4"]},
   "tropico_5": {"average": 25.5, "complete": 71, "extra": 28, "main": 20.5, "systems": ["ps4"]},
   "uncanny_valley": {"average": 2, "complete": 6, "extra": 2.5, "main": 2, "systems": ["ps4", "vita"]},
-  "uncharted_4_a_thiefs_end": {"average": 16, "complete": 27.5, "extra": 17.5, "main": 15, "systems": ["ps4"]},
   "uncharted_the_nathan_drake_collection": {"average": 29.5, "complete": 61, "extra": 31, "main": 27, "systems": ["ps4"]},
   "unravel": {"average": 7, "complete": 11.5, "extra": 7.5, "main": 6, "systems": ["vita"]},
   "until_dawn": {"average": 8.5, "complete": 18, "extra": 9, "main": 8, "systems": ["ps4"]},
