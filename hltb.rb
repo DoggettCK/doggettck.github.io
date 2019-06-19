@@ -67,7 +67,7 @@ class HLTB
 end
 
 class Game
-  attr_accessor :title, :path, :main, :extra, :complete, :average, :ps4, :vita
+  attr_accessor :title, :path, :main, :extra, :complete, :average, :ps4
 
   def initialize
     @main, @extra, @complete, @average = [0.0] * 4
@@ -90,7 +90,7 @@ class Game
   def to_js
     attributes = [:main, :extra, :complete, :average].map { |attr| "\"#{attr}\": #{send(attr)}" }.join(", ")
 
-    "\"#{title_symbol}\": {#{attributes}, \"systems\": [\"ps4\", \"vita\"]},"
+    "\"#{title_symbol}\": {#{attributes}, \"systems\": [\"ps4\"]},"
   end
 
   def to_stdout
