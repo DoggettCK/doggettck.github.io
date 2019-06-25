@@ -182,16 +182,16 @@ var build_top_n_section = function(header_text, games_list) {
     var title_node = document.createElement('h4');
     title_node.appendChild(document.createTextNode(title));
 
-    li.appendChild(title_node);
-    
     if (game['systems'].indexOf('ps4') >= 0) {
-      li.appendChild(system_node('ps4'));
+      title_node.appendChild(system_node('ps4'));
     }
     
     if (game['systems'].indexOf('vita') >= 0) {
-      li.appendChild(system_node('vita'));
+      title_node.appendChild(system_node('vita'));
     }
 
+    li.appendChild(title_node);
+    
     ol.appendChild(li);
   });
 
