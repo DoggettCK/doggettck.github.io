@@ -143,82 +143,121 @@ const games = {
 }
 
 var sort_games = function(time) {
-  var list = $.map(games, function(k, v){
-    k['title'] = v;
+  return Object.keys(games).map(function(item) {
+    games[item]['title'] = item;
 
-    return k;
-  });
-
-  return $(list).filter(function(i, game){
+    return games[item];
+  }).filter(function(game) {
     return game[time] > 0.0;
-  }).sort(function(a, b){
+  }).sort(function(a, b) {
     return a[time] - b[time];
-  }).toArray();
+  });
 };
 
-var build_top_games_element = function(time, header_text, games_list) {
-  var header = $("<div/>").addClass("col-xs-6");
-  var ol = $("<ol/>");
+var system_node = function(system_name) {
+  var img = document.createElement('img');
 
-  header.append($("<h3/>").text(header_text))
-  header.append(ol);
+  img.setAttribute('src', 'images/' + system_name + '.svg');
 
-  for (var i = 0; i < games_list.length; i++) {
-    var game = games_list[i];
-    var li = $("<li/>");
-    var title = $("#" + game['title']).text()
-    var contents = $("<h4/>").text(title);
-    var systems = game['systems'];
+  return img;
+};
 
-    $.each(systems, function(i, system) {
-      contents.append($("<img/>").attr({src: "images/" + system + ".svg"}));
-    });
+var build_top_n_section = function(header_text, games_list) {
+  var container = document.createElement('div');
+  container.className = "col-xs-6";
 
-    li.append(contents);
-    ol.append(li);
-  }
+  var header = document.createElement('h3');
+  header.appendChild(document.createTextNode(header_text));
 
-  return header;
+  container.appendChild(header);
+
+  var ol = document.createElement('ol');
+
+  games_list.forEach(function(game) {
+    var li = document.createElement('li');
+
+    // TODO: Move this into sort_games builder
+    var title = document.getElementById(game['title']).textContent;
+
+    var title_node = document.createElement('h4');
+    title_node.appendChild(document.createTextNode(title));
+
+    li.appendChild(title_node);
+    
+    if (game['systems'].indexOf('ps4') >= 0) {
+      li.appendChild(system_node('ps4'));
+    }
+    
+    if (game['systems'].indexOf('vita') >= 0) {
+      li.appendChild(system_node('vita'));
+    }
+
+    ol.appendChild(li);
+  });
+
+  container.appendChild(ol);
+
+  return container;
 };
 
 var update_ui = function(time, time_text, top_n) {
-  $("#summary").empty();
+  var summary = document.getElementById('summary');
+  while(summary.firstChild) {
+    summary.removeChild(summary.firstChild);
+  }
 
   var sorted_games = sort_games(time);
   var total_hours = sorted_games.reduce(function(sum, game){ return sum + game[time]; }, 0);
   var shortest = sorted_games.slice(0, top_n);
   var longest = sorted_games.slice(-top_n).reverse();
 
-  $("#games_to_play div").each(function(){ update_list_item(this, time) });
-  $("#summary").append($("<h2/>").text("That's " + total_hours + " total hours of gaming to look forward to."));
-  $("#summary").append(build_top_games_element(time, "Shortest " + top_n + " games (" + time_text + ")", shortest));
-  $("#summary").append(build_top_games_element(time, "Longest " + top_n + " games (" + time_text + ")", longest));
-};
-
-var update_list_item = function(el, time) {
-  var item = $(el);
-  var title = item.attr('id');
-  var game = games[title];
-  var game_time = game[time];
-
-  item.children("i, img").remove();
-
-  $.each(games[title]['systems'], function(i, system) {
-    var img = $("<img/>").attr({src: "images/" + system + ".svg"});
-    item.append(img);
+  document.querySelectorAll('#games_to_play div').forEach(function(node) {
+    update_game(node, time);
   });
 
-  item.append($("<i/>").text(" (" + game_time + " hours)"));
+  var total_time = document.createElement('h2');
+  total_time.appendChild(document.createTextNode("That's " + total_hours + " total hours of gaming to look forward to."));
+
+  summary.appendChild(total_time);
+
+  var shortest_section = build_top_n_section("Shortest " + top_n + " games (" + time_text + ")", shortest) 
+  var longest_section = build_top_n_section("Longest " + top_n + " games (" + time_text + ")", longest) 
+
+  summary.appendChild(shortest_section);
+  summary.appendChild(longest_section);
+};
+
+var update_game = function(el, time) {
+  var game = games[el.getAttribute('id')];
+  var game_time = game[time];
+  var systems = game['systems'];
+
+  for (var i = el.childNodes.length - 1; i >= 0; i--) {
+    if (el.childNodes[i].nodeType != 3) {
+      el.removeChild(el.childNodes[i]);
+    }
+  };
+
+  systems.forEach(function(system) {
+    el.appendChild(system_node(system));
+  });
+
+  var hours = document.createElement('i');
+
+  hours.appendChild(document.createTextNode(' (' + game_time + ' hours)'));
+
+  el.appendChild(hours);
 };
 
 var main = function() {
-  $("#summary_controls li").click(function() {
-    var button = $(this);
-
-    update_ui(button.data('time'), button.text(), 3);
+  document.querySelectorAll('#summary_controls li').forEach(function(button) {
+    button.addEventListener('click', function(){
+      update_ui(button.getAttribute('data-time'), button.innerText, 3)
+    });
   });
 
-  $("#summary_controls li:first").click();
+  var first_button = document.querySelector('#summary_controls li');
+  update_ui(first_button.getAttribute('data-time'), first_button.innerText, 3);
 };
 
 main();
