@@ -10,7 +10,6 @@ const games = {
   "assassins_creed_chronicles_china": {"average": 7.5, "complete": 17, "extra": 9.5, "main": 6, "systems": ["ps4"]},
   "assassins_creed_chronicles_india": {"average": 6.5, "complete": 9.5, "extra": 7, "main": 6, "systems": ["ps4"]},
   "assassins_creed_chronicles_russia": {"average": 7, "complete": 11.5, "extra": 8, "main": 6, "systems": ["ps4"]},
-  "assassins_creed_odyssey": {"main": 38.0, "extra": 71.0, "complete": 111.0, "average": 0.0, "systems": ["ps4"]},
   "assassins_creed_syndicate": {"average": 31.5, "complete": 51.5, "extra": 32, "main": 17.5, "systems": ["ps4"]},
   "beyond_two_souls": {"average": 11.5, "complete": 27, "extra": 12, "main": 10.5, "systems": ["ps4"]},
   "bloodborne": {"average": 48, "complete": 77, "extra": 45, "main": 35, "systems": ["ps4"]},
@@ -143,18 +142,14 @@ const games = {
 }
 
 var sort_games = function(time) {
-  return Object.keys(games).map(function(item) {
-    games[item]['title'] = item;
-
-    return games[item];
-  }).filter(function(game) {
+  return Object.values(games).filter(function(game) {
     return game[time] > 0.0;
   }).sort(function(a, b) {
     return a[time] - b[time];
   });
 };
 
-var system_node = function(system_name) {
+var system_image = function(system_name) {
   var img = document.createElement('img');
 
   img.setAttribute('src', 'images/' + system_name + '.svg');
@@ -162,101 +157,97 @@ var system_node = function(system_name) {
   return img;
 };
 
-var build_top_n_section = function(header_text, games_list) {
+var build_game_node = function(container, game, time) {
+  empty_node(container);
+
+  container.appendChild(document.createTextNode(game['title']));
+
+  game['systems'].forEach(function(system) { container.appendChild(system_image(system)); });
+
+  var hours = document.createElement('i');
+
+  hours.appendChild(document.createTextNode(' (' + game[time] + ' hours)'));
+
+  container.appendChild(hours);
+};
+
+var build_top_n_section = function(time, header_text, games_list) {
   var container = document.createElement('div');
-  container.className = "col-xs-6";
+  container.className = "col-md";
 
   var header = document.createElement('h3');
   header.appendChild(document.createTextNode(header_text));
 
   container.appendChild(header);
 
-  var ol = document.createElement('ol');
+  var list = document.createElement('ol');
 
   games_list.forEach(function(game) {
-    var li = document.createElement('li');
+    var list_item = document.createElement('li');
 
-    // TODO: Move this into sort_games builder
-    var title = document.getElementById(game['title']).textContent;
-
-    var title_node = document.createElement('h4');
-    title_node.appendChild(document.createTextNode(title));
-
-    if (game['systems'].indexOf('ps4') >= 0) {
-      title_node.appendChild(system_node('ps4'));
-    }
+    build_game_node(list_item, game, time);
     
-    if (game['systems'].indexOf('vita') >= 0) {
-      title_node.appendChild(system_node('vita'));
-    }
-
-    li.appendChild(title_node);
-    
-    ol.appendChild(li);
+    list.appendChild(list_item);
   });
 
-  container.appendChild(ol);
+  container.appendChild(list);
 
   return container;
 };
 
-var update_ui = function(time, time_text, top_n) {
-  var summary = document.getElementById('summary');
-  while(summary.firstChild) {
-    summary.removeChild(summary.firstChild);
+var empty_node = function(el) {
+  while(el.firstChild) {
+    el.removeChild(el.firstChild);
   }
+};
+
+var cleanup_ui = function() {
+  empty_node(document.getElementById('summary'));
+  empty_node(document.getElementById('summary_time'));
+
+  document.querySelectorAll('#games_to_play div').forEach(empty_node);
+};
+
+var update_ui = function(time, time_text, top_n) {
+  cleanup_ui();
 
   var sorted_games = sort_games(time);
   var total_hours = sorted_games.reduce(function(sum, game){ return sum + game[time]; }, 0);
+
+  var summary_time = document.getElementById('summary_time');
+  summary_time.appendChild(document.createTextNode("That's " + total_hours + " total hours of gaming to look forward to."));
+
   var shortest = sorted_games.slice(0, top_n);
   var longest = sorted_games.slice(-top_n).reverse();
 
   document.querySelectorAll('#games_to_play div').forEach(function(node) {
-    update_game(node, time);
+    var game = games[node.getAttribute('id')];
+
+    build_game_node(node, game, time);
   });
 
-  var total_time = document.createElement('h2');
-  total_time.appendChild(document.createTextNode("That's " + total_hours + " total hours of gaming to look forward to."));
+  var shortest_section = build_top_n_section(time, "Shortest " + top_n + " games (" + time_text + ")", shortest) 
+  var longest_section = build_top_n_section(time, "Longest " + top_n + " games (" + time_text + ")", longest) 
 
-  summary.appendChild(total_time);
-
-  var shortest_section = build_top_n_section("Shortest " + top_n + " games (" + time_text + ")", shortest) 
-  var longest_section = build_top_n_section("Longest " + top_n + " games (" + time_text + ")", longest) 
-
+  var summary = document.getElementById('summary');
   summary.appendChild(shortest_section);
   summary.appendChild(longest_section);
 };
 
-var update_game = function(el, time) {
-  var game = games[el.getAttribute('id')];
-  var game_time = game[time];
-  var systems = game['systems'];
-
-  for (var i = el.childNodes.length - 1; i >= 0; i--) {
-    if (el.childNodes[i].nodeType != 3) {
-      el.removeChild(el.childNodes[i]);
-    }
-  };
-
-  systems.forEach(function(system) {
-    el.appendChild(system_node(system));
+var main = function() {
+  // Add title from HTML to games array, plus key
+  Object.keys(games).forEach(function(key) {
+    games[key]['key'] = key;
+    games[key]['title'] = document.getElementById(key).textContent;
   });
 
-  var hours = document.createElement('i');
-
-  hours.appendChild(document.createTextNode(' (' + game_time + ' hours)'));
-
-  el.appendChild(hours);
-};
-
-var main = function() {
-  document.querySelectorAll('#summary_controls li').forEach(function(button) {
+  document.querySelectorAll('#summary_controls button').forEach(function(button) {
     button.addEventListener('click', function(){
       update_ui(button.getAttribute('data-time'), button.innerText, 3)
     });
   });
 
-  var first_button = document.querySelector('#summary_controls li');
+  var first_button = document.querySelector('#summary_controls button');
   update_ui(first_button.getAttribute('data-time'), first_button.innerText, 3);
 };
 
