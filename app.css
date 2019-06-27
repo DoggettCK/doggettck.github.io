@@ -1,21 +1,20 @@
-body {
-  font-size: large;
+.jumbotron {
+  padding: 0 2rem;
 }
 
-.list-group-item {
-  padding: 0.3em;
-  border: none;
-}
-
-#summary_controls li {
-  list-style: none;
-  padding: 0.5em 0.25em;
+#summary, #summary_controls, #summary_time {
+  margin-top: 1rem;
 }
 
 #summary_controls button {
   width: 100% !important;
+  margin: 0.3rem;
 }
 
-#summary img, div.col-md-4 img {
-  width: 2em;
+img[src$='.svg'] {
+  width: 2rem;
+}
+
+section h3 {
+  margin-top: 1rem;
 }

@@ -3,29 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css">
     </script>
     <title>Games on my Pile</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="jumbotron container-fluid">
-        <h2>PS4/Vita games I need to play</h2>
-        <div id="summary_controls">
-          <h3>Select the time measurement</h3>
-          <ul>
-            <li class="col-md-3" data-time="main"><button class="btn btn-default">Main Story</button></li>
-            <li class="col-md-3" data-time="extra"><button class="btn btn-default">Main Story + Extras</button></li>
-            <li class="col-md-3" data-time="complete"><button class="btn btn-default">Complete</button></li>
-            <li class="col-md-3" data-time="average"><button class="btn btn-default">Average</button></li>
-          </ul>
+        <h2 class="text-center">PS4/Vita games I need to play</h2>
+        <div id="summary_controls" class="row">
+          <div class="col-md-3"><button type="button" class="btn btn-primary" data-time="main">Main Story</button></div>
+          <div class="col-md-3"><button type="button" class="btn btn-primary" data-time="extra">Main Story + Extras</button></div>
+          <div class="col-md-3"><button type="button" class="btn btn-primary" data-time="complete">Complete</button></div>
+          <div class="col-md-3"><button type="button" class="btn btn-primary" data-time="average">Average</button></div>
         </div>
-        <div id="summary"></div>
+        <h2 id="summary_time" class="text-center"></h2>
+        <div id="summary" class="row"></div>
       </div>
       <section class="games">
-        <h3>Wishlist</h3>
+        <h3 class="text-center">Wishlist</h3>
         <div class="row">
           <div class="col-md-4">A Way Out</div>
           <div class="col-md-4">Celeste</div>
@@ -35,7 +33,7 @@
           <div class="col-md-4">Salt and Sanctuary</div>
           <div class="col-md-4">Tetris Effect</div>
         </div>
-        <h3>Games to Play</h3>
+        <h3 class="text-center">Games to Play</h3>
         <div class="row" id="games_to_play">
           <div class="col-md-4" id="2064_read_only_memories">2064: Read Only Memories</div>
           <div class="col-md-4" id="99_vidas">99Vidas</div>
@@ -178,7 +176,7 @@
           <div class="col-md-4" id="yakuza_kiwami">Yakuza Kiwami</div>
           <div class="col-md-4" id="zero_escape_zero_time_dilemma">Zero Escape: Zero Time Dilemma</div>
         </div>
-        <h3>Games to replay or come back to</h3>
+        <h3 class="text-center">Games to replay or come back to</h3>
         <div class="row" id="games_to_replay">
           <div class="col-md-4">Assassin's Creed: Freedom Cry</div>
           <div class="col-md-4">Batman: Arkham Asylum</div>
@@ -200,7 +198,7 @@
           <div class="col-md-4">Wolfenstein: The Old Blood</div>
           <div class="col-md-4">Wolfenstein II: The New Colossus</div>
         </div>
-        <h3>Games I've beaten</h3>
+        <h3 class="text-center">Games I've beaten</h3>
         <div class="row" id="games_beaten">
           <div class="col-md-4">ABZÛ</div>
           <div class="col-md-4">Assassin's Creed Odyssey</div>
