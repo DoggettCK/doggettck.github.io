@@ -67,10 +67,10 @@ class HLTB
 end
 
 class Game
-  attr_accessor :title, :path, :main, :extra, :complete, :average, :ps4
+  attr_accessor :title, :path, :main, :extra, :complete, :ps4
 
   def initialize
-    @main, @extra, @complete, @average = [0.0] * 4
+    @main, @extra, @complete = [0.0] * 3
   end
 
   def title_symbol
@@ -88,14 +88,14 @@ class Game
   end
 
   def to_js
-    attributes = [:main, :extra, :complete, :average].map { |attr| "\"#{attr}\": #{send(attr)}" }.join(", ")
+    attributes = [:main, :extra, :complete].map { |attr| "\"#{attr}\": #{send(attr)}" }.join(", ")
 
     "\"#{title_symbol}\": {#{attributes}, \"systems\": [\"ps4\"]},"
   end
 
   def to_stdout
     lines = [title, path]
-    %i(main extra complete average).each do |type|
+    %i(main extra complete).each do |type|
       lines << ("#{type.to_s.capitalize}: #{send(type)} hours")
     end
     lines << ("\n")
@@ -144,7 +144,7 @@ class GameLookup
 
     time_section = data.css(times_section(data)).css('.center')
 
-    %i(main extra complete average).each do |type|
+    %i(main extra complete).each do |type|
       if time_section.any?
         g.send("#{type}=", sanitize(time_section.shift.children.text))
       end
