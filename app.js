@@ -23,7 +23,6 @@ const games = {
   "darkest_dungeon": {"main": 53.0, "extra": 79.5, "complete": 103.0, "systems": ["ps4", "vita"]},
   "darksiders_ii_deathinitive_edition": {"main": 20.0, "extra": 29.0, "complete": 46.5, "systems": ["ps4"]},
   "dayofthe_tentacle_remastered": {"main": 4.5, "extra": 5.5, "complete": 6.0, "systems": ["ps4", "vita"]},
-  "dear_esther": {"main": 1.5, "extra": 1.5, "complete": 1.5, "systems": ["ps4"]},
   "destiny2": {"main": 12.0, "extra": 24.0, "complete": 99.0, "systems": ["ps4"]},
   "deus_ex_mankind_divided": {"main": 15.0, "extra": 29.5, "complete": 46.5, "systems": ["ps4"]},
   "downwell": {"main": 8.0, "extra": 12.0, "complete": 15.0, "systems": ["vita"]},
