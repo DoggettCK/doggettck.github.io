@@ -1,4 +1,5 @@
 const games = {
+  "1979_revolution_black_friday": {"main": 2.0, "extra": 3.0, "complete": 4.5, "systems": ["ps4"]},
   "2064_read_only_memories": {"main": 9.0, "extra": 10.5, "complete": 17.5, "systems": ["vita"]},
   "99_vidas": {"main": 3.0, "extra": 3.0, "complete": 3.0, "systems": ["ps4", "vita"]},
   "absolver": {"main": 5.0, "extra": 7.0, "complete": 30.0, "systems": ["ps4"]},
