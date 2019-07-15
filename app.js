@@ -61,7 +61,6 @@ const games = {
   "killing_floor2": {"main": 12.5, "extra": 46.0, "complete": 136.0, "systems": ["ps4"]},
   "knack": {"main": 10.5, "extra": 11.5, "complete": 37.5, "systems": ["ps4"]},
   "lara_croft_go": {"main": 3.5, "extra": 5.5, "complete": 6.5, "systems": ["ps4", "vita"]},
-  "lego_batman3_beyond_gotham": {"main": 10.5, "extra": 17.5, "complete": 36.0, "systems": ["vita"]},
   "life_is_strange2": {"main": 20.0, "extra": 20.0, "complete": 20.0, "systems": ["ps4"]},
   "linelight": {"main": 4.0, "extra": 7.0, "complete": 13.0, "systems": ["ps4"]},
   "mad_max2015": {"main": 19.5, "extra": 37.5, "complete": 61.0, "systems": ["ps4"]},
