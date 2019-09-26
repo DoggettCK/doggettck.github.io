@@ -234,6 +234,10 @@ var update_ui = function(time, time_text, top_n) {
   summary.appendChild(shortest_section);
   summary.appendChild(longest_section);
 
+  pick_random_game(sorted_games);
+};
+
+var pick_random_game = function(sorted_games) {
   var random_game = sorted_games[Math.floor(Math.random() * sorted_games.length)];
   var random_game_id = random_game['key'];
 
@@ -242,7 +246,11 @@ var update_ui = function(time, time_text, top_n) {
 
   empty_node(random_game_div);
 
-  random_game_div.innerHTML = game_div.innerHTML;
+  cloned_game_node = game_div.cloneNode(true);
+  cloned_game_node.className = cloned_game_node.className.replace(/\bcol-[^\b]+\b/, "");
+
+
+  random_game_div.appendChild(cloned_game_node);
 };
 
 var main = function() {
