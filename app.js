@@ -1,7 +1,7 @@
 const games = {
-  "1979_revolution_black_friday": {"main": 2.0, "extra": 3.0, "complete": 4.5, "systems": ["ps4"]},
-  "2064_read_only_memories": {"main": 9.0, "extra": 10.5, "complete": 17.5, "systems": ["vita"]},
-  "99_vidas": {"main": 3.0, "extra": 3.0, "complete": 3.0, "systems": ["ps4", "vita"]},
+  "_1979_revolution_black_friday": {"main": 2.0, "extra": 3.0, "complete": 4.5, "systems": ["ps4"]},
+  "_2064_read_only_memories": {"main": 9.0, "extra": 10.5, "complete": 17.5, "systems": ["vita"]},
+  "_99_vidas": {"main": 3.0, "extra": 3.0, "complete": 3.0, "systems": ["ps4", "vita"]},
   "a_way_out": {"main": 6.0, "extra": 6.0, "complete": 7.0, "systems": ["ps4"]},
   "absolver": {"main": 5.0, "extra": 7.0, "complete": 30.0, "systems": ["ps4"]},
   "adr1_ft": {"main": 4.5, "extra": 6.0, "complete": 8.5, "systems": ["ps4"]},
@@ -233,6 +233,16 @@ var update_ui = function(time, time_text, top_n) {
   var summary = document.getElementById('summary');
   summary.appendChild(shortest_section);
   summary.appendChild(longest_section);
+
+  var random_game = sorted_games[Math.floor(Math.random() * sorted_games.length)];
+  var random_game_id = random_game['key'];
+
+  var game_div = document.querySelector("#" + random_game_id);
+  var random_game_div = document.querySelector("#random_game");
+
+  empty_node(random_game_div);
+
+  random_game_div.innerHTML = game_div.innerHTML;
 };
 
 var main = function() {
