@@ -113,7 +113,6 @@ const games = {
   "the_evil_within": {"main": 16.0, "extra": 19.0, "complete": 37.0, "systems": ["ps4"]},
   "the_evil_within2": {"main": 13.0, "extra": 18.5, "complete": 28.0, "systems": ["ps4"]},
   "the_flameinthe_flood": {"main": 9.5, "extra": 15.0, "complete": 25.5, "systems": ["ps4"]},
-  "the_lastof_us_remastered": {"main": 14.5, "extra": 17.5, "complete": 25.0, "systems": ["ps4"]},
   "the_sexy_brutale": {"main": 6.0, "extra": 7.0, "complete": 8.5, "systems": ["ps4"]},
   "the_surge": {"main": 20.0, "extra": 28.5, "complete": 41.5, "systems": ["ps4"]},
   "the_swindle": {"main": 10.0, "extra": 21.0, "complete": 21.0, "systems": ["ps4", "vita"]},
