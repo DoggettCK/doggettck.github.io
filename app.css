@@ -2,8 +2,12 @@
   padding: 0 2rem;
 }
 
-#summary, #summary_controls, #summary_time {
+#summary, #summary_controls, #summary_time, #ids{
   margin-top: 1rem;
+}
+
+#ids{
+  margin-bottom: 1rem;
 }
 
 #summary li {
