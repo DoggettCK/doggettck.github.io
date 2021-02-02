@@ -36,7 +36,6 @@ const games = {
   "dragon_age_inquisition": {"main": 46.0, "extra": 87.5, "complete": 127.0, "systems": ["ps4"]},
   "erica": {"main": 2.0, "extra": 3.0, "complete": 9.5, "systems": ["ps4"]},
   "everybodys_gonetothe_rapture": {"main": 4.5, "extra": 6.0, "complete": 9.0, "systems": ["ps4"]},
-  "fall_guys": {"main": 11.5, "extra": 0.0, "complete": 0.0, "systems": ["ps4"]},
   "fallen_legion_flamesof_rebellion": {"main": 8.0, "extra": 8.0, "complete": 8.0, "systems": ["ps4", "vita"]},
   "farming_simulator19": {"main": 187.0, "extra": 258.0, "complete": 698.0, "systems": ["ps4"]},
   "final_fantasy7": {"main": 38.5, "extra": 55.0, "complete": 88.5, "systems": ["ps4"]},
