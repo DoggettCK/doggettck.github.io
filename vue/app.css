@@ -1,0 +1,24 @@
+.jumbotron {
+  padding: 0 2rem;
+}
+
+#summary, #summary_controls, #summary_time{
+  margin-top: 1rem;
+}
+
+#summary li {
+  list-style: none;
+}
+
+#summary_controls button {
+  width: 100% !important;
+  margin: 0.3rem;
+}
+
+img[src$='.svg'] {
+  width: 2rem;
+}
+
+section h3 {
+  margin-top: 1rem;
+}

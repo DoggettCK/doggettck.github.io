@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+    <title>Games on my Pile</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app" class="container-fluid">
+      <div class="jumbotron container-fluid">
+        <h2 class="text-center">PS4/Vita games I need to play</h2>
+        <div id="summary_controls" class="row">
+          <div class="col-md">
+            <button type="button" class="btn btn-primary" v-on:click="setTime('main')">Main Story</button>
+          </div>
+          <div class="col-md">
+            <button type="button" class="btn btn-primary" v-on:click="setTime('extra')">Main Story + Extras</button>
+          </div>
+          <div class="col-md">
+            <button type="button" class="btn btn-primary" v-on:click="setTime('complete')">Complete</button>
+          </div>
+        </div>
+        <time-summary v-bind:time-summary="timeSummary"></time-summary>
+        <top-n-games v-bind:num-games="5" v-bind:games="gamesToPlay" v-bind:time="time"></top-n-games>
+        <random-game v-bind:game="randomGame" v-bind:time="time"></random-game>
+      </div>
+      <section class="games">
+        <untimed-game-list v-bind:games="wishlist" v-bind:header="'Wishlist'"></untimed-game-list>
+        <timed-game-list v-bind:games="gamesToPlay" v-bind:header="'Games to Play'"></timed-game-list>
+        <untimed-game-list v-bind:games="reruns" v-bind:header="'Games to Platinum or replay from other systems'"></untimed-game-list>
+        <untimed-game-list v-bind:games="completed" v-bind:header="'Games I\'ve Beaten'"></untimed-game-list>
+      </section>
+    </div>
+    <script src="games.js"></script>
+  </body>
+</html>
