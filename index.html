@@ -29,10 +29,10 @@
         <random-game v-bind:game="randomGame" v-bind:time="time"></random-game>
       </div>
       <section class="games">
-        <untimed-game-list v-bind:games="wishlist" v-bind:header="'Wishlist'"></untimed-game-list>
         <timed-game-list v-bind:games="gamesToPlay" v-bind:header="'Games to Play'"></timed-game-list>
         <untimed-game-list v-bind:games="reruns" v-bind:header="'Games to Platinum or replay from other systems'"></untimed-game-list>
         <untimed-game-list v-bind:games="completed" v-bind:header="'Games I\'ve Beaten'"></untimed-game-list>
+        <untimed-game-list v-bind:games="jettisoned" v-bind:header="'Jettisoned or Won\'t Play'"></untimed-game-list>
       </section>
     </div>
     <script src="data/games.js"></script>

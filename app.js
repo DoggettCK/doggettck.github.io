@@ -149,9 +149,13 @@ Vue.component('random-game', {
   `
 });
 
+sort_by_game_title = function(game_a, game_b) {
+  return game_a.title.localeCompare(game_b.title);
+};
+
 var app = new Vue({
   el: '#app',
-  data: { games: games, time: 'complete' },
+  data: { games: all_games, time: 'complete' },
   computed: {
     randomGame: function() {
       var playable = this.gamesToPlay;
@@ -160,23 +164,23 @@ var app = new Vue({
     },
     gamesToPlay: function() {
       return this.games
-        .filter(game => !game.is_wishlist && !game.is_rerun && !game.is_complete)
-        .sort(game => game.title)
+        .filter(game => !game.jettisoned && !game.is_rerun && !game.is_complete)
+        .sort(sort_by_game_title);
     },
     completed: function() {
       return this.games
         .filter(game => game.is_complete)
-        .sort(game => game.title)
+        .sort(sort_by_game_title)
     },
-    wishlist: function() {
+    jettisoned: function() {
       return this.games
-        .filter(game => game.is_wishlist)
-        .sort(game => game.title)
+        .filter(game => game.jettisoned)
+        .sort(sort_by_game_title)
     },
     reruns: function() {
       return this.games
         .filter(game => game.is_rerun)
-        .sort(game => game.title)
+        .sort(sort_by_game_title)
     },
     timeSummary: function() {
       switch(this.time) {

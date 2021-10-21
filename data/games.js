@@ -1,4 +1,4 @@
-const games = [
+const all_games = [
   {
     "id": "_1979_revolution_black_friday",
     "times": {
@@ -7,7 +7,7 @@ const games = [
       "complete": 4.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -21,7 +21,7 @@ const games = [
       "complete": 17.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -35,7 +35,7 @@ const games = [
       "complete": 3
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -49,7 +49,7 @@ const games = [
       "complete": 7
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -63,7 +63,7 @@ const games = [
       "complete": 30
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -77,7 +77,7 @@ const games = [
       "complete": 8.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -91,7 +91,7 @@ const games = [
       "complete": 6.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -105,7 +105,7 @@ const games = [
       "complete": 10.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -119,7 +119,7 @@ const games = [
       "complete": 2.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -133,7 +133,7 @@ const games = [
       "complete": 18.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -146,8 +146,8 @@ const games = [
       "extra": 9.5,
       "complete": 17
     },
-    "is_complete": false,
-    "is_wishlist": false,
+    "is_complete": true,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -161,7 +161,7 @@ const games = [
       "complete": 15.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -175,7 +175,7 @@ const games = [
       "complete": 14.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -189,7 +189,7 @@ const games = [
       "complete": 27
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -203,7 +203,7 @@ const games = [
       "complete": 77.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -217,7 +217,7 @@ const games = [
       "complete": 62
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "vita": false,
     "title": "Borderlands 3"
@@ -230,8 +230,8 @@ const games = [
       "complete": 120
     },
     "is_complete": false,
-    "is_wishlist": false,
-    "is_rerun": false,
+    "jettisoned": false,
+    "is_rerun": true,
     "vita": false,
     "title": "Borderlands: The Handsome Collection"
   },
@@ -243,63 +243,63 @@ const games = [
       "complete": 14.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
     "title": "Broken Sword 5: The Serpent's Curse"
   },
   {
-    "id": "callof_duty_black_ops_iii",
+    "id": "call_of_duty_black_ops_iii",
     "times": {
       "main": 9,
       "extra": 13.5,
       "complete": 48.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Call of Duty: Black Ops III"
   },
   {
-    "id": "callof_duty_modern_warfare2_remastered",
+    "id": "call_of_duty_modern_warfare2_remastered",
     "times": {
       "main": 5.5,
       "extra": 7.5,
       "complete": 15.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Call of Duty Modern Warfare 2  Remastered"
   },
   {
-    "id": "callof_duty_modern_warfare_remastered",
+    "id": "call_of_duty_modern_warfare_remastered",
     "times": {
       "main": 6,
       "extra": 7.5,
       "complete": 16
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Call of Duty: Modern Warfare - Remastered"
   },
   {
-    "id": "childof_light",
+    "id": "child_of_light",
     "times": {
       "main": 11,
       "extra": 13.5,
       "complete": 15.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -313,7 +313,7 @@ const games = [
       "complete": 104
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -327,21 +327,21 @@ const games = [
       "complete": 5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
     "title": "Claire"
   },
   {
-    "id": "cryptofthe_necro_dancer",
+    "id": "crypt_of_the_necro_dancer",
     "times": {
       "main": 15,
       "extra": 23,
       "complete": 44
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -355,7 +355,7 @@ const games = [
       "complete": 103
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -369,7 +369,7 @@ const games = [
       "complete": 46.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -383,21 +383,21 @@ const games = [
       "complete": 25.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Darksiders III"
   },
   {
-    "id": "dayofthe_tentacle_remastered",
+    "id": "day_of_the_tentacle_remastered",
     "times": {
       "main": 4.5,
       "extra": 5.5,
       "complete": 6
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -411,7 +411,7 @@ const games = [
       "complete": 99
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -425,21 +425,21 @@ const games = [
       "complete": 46.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Deus Ex: Mankind Divided"
   },
   {
-    "id": "dirt_rally20",
+    "id": "dirt_rally_20",
     "times": {
       "main": 10.5,
       "extra": 48,
       "complete": 48
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -452,8 +452,8 @@ const games = [
       "extra": 18,
       "complete": 23.5
     },
-    "is_complete": false,
-    "is_wishlist": false,
+    "is_complete": true,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -467,7 +467,7 @@ const games = [
       "complete": 15
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -481,7 +481,7 @@ const games = [
       "complete": 127
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -495,63 +495,63 @@ const games = [
       "complete": 9.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Erica"
   },
   {
-    "id": "everybodys_gonetothe_rapture",
+    "id": "everybodys_gone_to_the_rapture",
     "times": {
       "main": 4.5,
       "extra": 6,
       "complete": 9
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Everybody's Gone to the Rapture"
   },
   {
-    "id": "fallen_legion_flamesof_rebellion",
+    "id": "fallen_legion_flames_of_rebellion",
     "times": {
       "main": 8,
       "extra": 8,
       "complete": 8
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
     "title": "Fallen Legion: Flames of Rebellion"
   },
   {
-    "id": "farming_simulator19",
+    "id": "farming_simulator_19",
     "times": {
       "main": 187,
       "extra": 258,
       "complete": 698
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": true,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Farming Simulator 19"
   },
   {
-    "id": "final_fantasy7",
+    "id": "final_fantasy_7",
     "times": {
       "main": 38.5,
       "extra": 55,
       "complete": 88.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -565,7 +565,7 @@ const games = [
       "complete": 63.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -579,7 +579,7 @@ const games = [
       "complete": 16
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -593,7 +593,7 @@ const games = [
       "complete": 7.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -607,7 +607,7 @@ const games = [
       "complete": 10
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -621,7 +621,7 @@ const games = [
       "complete": 7
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -635,7 +635,7 @@ const games = [
       "complete": 132
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -648,22 +648,22 @@ const games = [
       "extra": 42,
       "complete": 59
     },
-    "is_complete": false,
-    "is_wishlist": false,
+    "is_complete": true,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Ghost of Tsushima"
   },
   {
-    "id": "godof_war_iii",
+    "id": "god_of_war_iii",
     "times": {
       "main": 10.5,
       "extra": 10.5,
       "complete": 10.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -677,7 +677,7 @@ const games = [
       "complete": 181
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -691,7 +691,7 @@ const games = [
       "complete": 79.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -705,21 +705,21 @@ const games = [
       "complete": 3.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Gravity Ghost"
   },
   {
-    "id": "gravity_rush2",
+    "id": "gravity_rush_2",
     "times": {
       "main": 20,
       "extra": 34,
       "complete": 53.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -733,7 +733,7 @@ const games = [
       "complete": 50
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -747,7 +747,7 @@ const games = [
       "complete": 8
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -761,7 +761,7 @@ const games = [
       "complete": 22
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -775,7 +775,7 @@ const games = [
       "complete": 27.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -789,7 +789,7 @@ const games = [
       "complete": 93.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -803,7 +803,7 @@ const games = [
       "complete": 49
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -817,21 +817,21 @@ const games = [
       "complete": 14.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
     "title": "Hotline Miami"
   },
   {
-    "id": "hotline_miami2_wrong_number",
+    "id": "hotline_miami_2_wrong_number",
     "times": {
       "main": 9,
       "extra": 12.5,
       "complete": 29
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -845,7 +845,7 @@ const games = [
       "complete": 6
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -859,7 +859,7 @@ const games = [
       "complete": 15.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -873,7 +873,7 @@ const games = [
       "complete": 13.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -887,7 +887,7 @@ const games = [
       "complete": 15.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -901,7 +901,7 @@ const games = [
       "complete": 20
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -915,7 +915,7 @@ const games = [
       "complete": 90.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -929,7 +929,7 @@ const games = [
       "complete": 4.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -943,7 +943,7 @@ const games = [
       "complete": 56.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -957,7 +957,7 @@ const games = [
       "complete": 6.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -971,49 +971,49 @@ const games = [
       "complete": 5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Journey"
   },
   {
-    "id": "just_cause3",
+    "id": "just_cause_3",
     "times": {
       "main": 17,
       "extra": 34,
       "complete": 56
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Just Cause 3"
   },
   {
-    "id": "just_cause4",
+    "id": "just_cause_4",
     "times": {
       "main": 16,
       "extra": 26,
       "complete": 57.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Just Cause 4"
   },
   {
-    "id": "killing_floor2",
+    "id": "killing_floor_2",
     "times": {
       "main": 12.5,
       "extra": 46,
       "complete": 136
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1027,7 +1027,7 @@ const games = [
       "complete": 37.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1041,21 +1041,21 @@ const games = [
       "complete": 6.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
     "title": "Lara Croft GO"
   },
   {
-    "id": "life_is_strange2",
+    "id": "life_is_strange_2",
     "times": {
       "main": 20,
       "extra": 20,
       "complete": 20
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1069,21 +1069,21 @@ const games = [
       "complete": 13
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Linelight"
   },
   {
-    "id": "mad_max2015",
+    "id": "mad_max_2015",
     "times": {
       "main": 19.5,
       "extra": 37.5,
       "complete": 61
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1097,7 +1097,7 @@ const games = [
       "complete": 48.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1111,21 +1111,21 @@ const games = [
       "complete": 93
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Mass Effect: Andromeda"
   },
   {
-    "id": "mega_man11",
+    "id": "mega_man_11",
     "times": {
       "main": 4.5,
       "extra": 5,
       "complete": 12
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1139,49 +1139,49 @@ const games = [
       "complete": 21
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Mega Man Legacy Collection"
   },
   {
-    "id": "metal_gear_solid2_sonsof_liberty",
+    "id": "metal_gear_solid_2_sons_of_liberty",
     "times": {
       "main": 13,
       "extra": 15,
       "complete": 23
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
     "title": "Metal Gear Solid 2: Sons of Liberty"
   },
   {
-    "id": "metal_gear_solid3_snake_eater",
+    "id": "metal_gear_solid_3_snake_eater",
     "times": {
       "main": 16,
       "extra": 19.5,
       "complete": 22.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
     "title": "Metal Gear Solid 3: Snake Eater"
   },
   {
-    "id": "metro2033_redux",
+    "id": "metro_2033_redux",
     "times": {
       "main": 9,
       "extra": 11.5,
       "complete": 22.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1195,7 +1195,7 @@ const games = [
       "complete": 26
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1209,7 +1209,7 @@ const games = [
       "complete": 36
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1223,7 +1223,7 @@ const games = [
       "complete": 24.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1237,21 +1237,21 @@ const games = [
       "complete": 2
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Ms. Pac-Man"
   },
   {
-    "id": "nba2_k20",
+    "id": "nba_2k20",
     "times": {
       "main": 98,
       "extra": 98,
       "complete": 98
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1265,7 +1265,7 @@ const games = [
       "complete": 4
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1279,7 +1279,7 @@ const games = [
       "complete": 10
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1292,8 +1292,8 @@ const games = [
       "extra": 42.5,
       "complete": 55
     },
-    "is_complete": false,
-    "is_wishlist": false,
+    "is_complete": true,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1307,7 +1307,7 @@ const games = [
       "complete": 20.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1321,7 +1321,7 @@ const games = [
       "complete": 11.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1335,35 +1335,35 @@ const games = [
       "complete": 13
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Oxenfree"
   },
   {
-    "id": "pac_man256",
+    "id": "pac_man_256",
     "times": {
       "main": 10.5,
       "extra": 10.5,
       "complete": 10.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Pac-Man 256"
   },
   {
-    "id": "pac_man_championship_edition2",
+    "id": "pac_man_championship_edition_2",
     "times": {
       "main": 4.5,
       "extra": 4.5,
       "complete": 4.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1377,21 +1377,21 @@ const games = [
       "complete": 16
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
     "title": "Papers, Please"
   },
   {
-    "id": "persona5",
+    "id": "persona_5",
     "times": {
       "main": 96,
       "extra": 111,
       "complete": 170
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1405,21 +1405,21 @@ const games = [
       "complete": 31.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": true,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Prototype"
   },
   {
-    "id": "prototype2",
+    "id": "prototype_2",
     "times": {
       "main": 10,
       "extra": 14,
       "complete": 18.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": true,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1433,7 +1433,7 @@ const games = [
       "complete": 28
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -1447,21 +1447,21 @@ const games = [
       "complete": 6.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Q.U.B.E.: Director's Cut"
   },
   {
-    "id": "ratchet_clank2016",
+    "id": "ratchet_clank_2016",
     "times": {
       "main": 10,
       "extra": 12.5,
       "complete": 20.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1475,7 +1475,7 @@ const games = [
       "complete": 28.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1489,7 +1489,7 @@ const games = [
       "complete": 9.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1503,8 +1503,8 @@ const games = [
       "complete": 34.5
     },
     "is_complete": false,
-    "is_wishlist": false,
-    "is_rerun": false,
+    "jettisoned": false,
+    "is_rerun": true,
     "ps4": true,
     "vita": false,
     "title": "Rise of the Tomb Raider"
@@ -1517,7 +1517,7 @@ const games = [
       "complete": 33
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1531,7 +1531,7 @@ const games = [
       "complete": 38
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -1545,7 +1545,7 @@ const games = [
       "complete": 7
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -1559,49 +1559,49 @@ const games = [
       "complete": 36
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Shadow of the Tomb Raider"
   },
   {
-    "id": "shadow_warrior2013",
+    "id": "shadow_warrior_2013",
     "times": {
       "main": 12.5,
       "extra": 15,
       "complete": 35.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Shadow Warrior (2013)"
   },
   {
-    "id": "sherlock_holmes_crimesand_punishments",
+    "id": "sherlock_holmes_crimes_and_punishments",
     "times": {
       "main": 12.5,
       "extra": 14.5,
       "complete": 14.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Sherlock Holmes: Crimes and Punishments"
   },
   {
-    "id": "sniper_elite4",
+    "id": "sniper_elite_4",
     "times": {
       "main": 10,
       "extra": 16,
       "complete": 34.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1615,21 +1615,21 @@ const games = [
       "complete": 11
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Soma"
   },
   {
-    "id": "songofthe_deep",
+    "id": "song_of_the_deep",
     "times": {
       "main": 6.5,
       "extra": 9,
       "complete": 11.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1643,7 +1643,7 @@ const games = [
       "complete": 23.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1657,7 +1657,7 @@ const games = [
       "complete": 19
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1671,7 +1671,7 @@ const games = [
       "complete": 20.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -1685,21 +1685,21 @@ const games = [
       "complete": 82.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
     "title": "Spelunky"
   },
   {
-    "id": "squares2015",
+    "id": "squares_2015",
     "times": {
       "main": 2,
       "extra": 7,
       "complete": 45
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -1712,36 +1712,36 @@ const games = [
       "extra": 13.5,
       "complete": 20.5
     },
-    "is_complete": false,
-    "is_wishlist": false,
+    "is_complete": true,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Star Wars Squadrons"
   },
   {
-    "id": "steam_world_dig",
+    "id": "steamworld_dig",
     "times": {
       "main": 5,
       "extra": 6.5,
       "complete": 8
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
     "title": "SteamWorld Dig"
   },
   {
-    "id": "steam_world_dig2",
+    "id": "steamworld_dig_2",
     "times": {
       "main": 7,
       "extra": 10,
       "complete": 13
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -1755,7 +1755,7 @@ const games = [
       "complete": 36
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1769,7 +1769,7 @@ const games = [
       "complete": 49.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1783,21 +1783,21 @@ const games = [
       "complete": 17
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Sundered"
   },
   {
-    "id": "tekken7",
+    "id": "tekken_7",
     "times": {
       "main": 3.5,
       "extra": 7,
       "complete": 15.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1811,7 +1811,7 @@ const games = [
       "complete": 33.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1825,7 +1825,7 @@ const games = [
       "complete": 7.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -1839,35 +1839,35 @@ const games = [
       "complete": 37
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "The Evil Within"
   },
   {
-    "id": "the_evil_within2",
+    "id": "the_evil_within_2",
     "times": {
       "main": 13,
       "extra": 18.5,
       "complete": 28
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "The Evil Within 2"
   },
   {
-    "id": "the_flameinthe_flood",
+    "id": "the_flame_in_the_flood",
     "times": {
       "main": 9.5,
       "extra": 15,
       "complete": 25.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1881,7 +1881,7 @@ const games = [
       "complete": 35.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1895,7 +1895,7 @@ const games = [
       "complete": 8.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1909,7 +1909,7 @@ const games = [
       "complete": 41.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1923,7 +1923,7 @@ const games = [
       "complete": 21
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -1937,7 +1937,7 @@ const games = [
       "complete": 28
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1951,21 +1951,21 @@ const games = [
       "complete": 45
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "The Witness"
   },
   {
-    "id": "thief2014",
+    "id": "thief_2014",
     "times": {
       "main": 10.5,
       "extra": 22,
       "complete": 42
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -1979,49 +1979,49 @@ const games = [
       "complete": 14.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Thimbleweed Park"
   },
   {
-    "id": "thisisthe_police",
+    "id": "this_is_the_police",
     "times": {
       "main": 18.5,
       "extra": 21,
       "complete": 25.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "This is the Police"
   },
   {
-    "id": "titanfall2",
+    "id": "titanfall_2",
     "times": {
       "main": 6,
       "extra": 8,
       "complete": 13.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Titanfall 2"
   },
   {
-    "id": "track_mania_turbo",
+    "id": "trackmania_turbo",
     "times": {
       "main": 9.5,
       "extra": 26,
       "complete": 70
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2035,7 +2035,7 @@ const games = [
       "complete": 15.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2049,35 +2049,35 @@ const games = [
       "complete": 87
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Trials Fusion"
   },
   {
-    "id": "tropico5",
+    "id": "tropico_5",
     "times": {
       "main": 20.5,
       "extra": 39.5,
       "complete": 92.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Tropico 5"
   },
   {
-    "id": "ultimate_marvel_vs_capcom3",
+    "id": "ultimate_marvel_vs_capcom_3",
     "times": {
       "main": 59,
       "extra": 10.5,
       "complete": 102
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2091,7 +2091,7 @@ const games = [
       "complete": 5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": true,
@@ -2105,7 +2105,7 @@ const games = [
       "complete": 12
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2119,21 +2119,21 @@ const games = [
       "complete": 18
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Until Dawn"
   },
   {
-    "id": "until_dawn_rushof_blood",
+    "id": "until_dawn_rush_of_blood",
     "times": {
       "main": 2,
       "extra": 3.5,
       "complete": 3.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2147,7 +2147,7 @@ const games = [
       "complete": 18
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -2161,7 +2161,7 @@ const games = [
       "complete": 9
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2175,7 +2175,7 @@ const games = [
       "complete": 41.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2189,7 +2189,7 @@ const games = [
       "complete": 4.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": false,
     "vita": true,
@@ -2202,8 +2202,8 @@ const games = [
       "extra": 30.5,
       "complete": 49.5
     },
-    "is_complete": false,
-    "is_wishlist": false,
+    "is_complete": true,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2217,21 +2217,21 @@ const games = [
       "complete": 28
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Wipeout Omega Collection"
   },
   {
-    "id": "wizardof_legend",
+    "id": "wizard_of_legend",
     "times": {
       "main": 6,
       "extra": 15.5,
       "complete": 20.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2245,7 +2245,7 @@ const games = [
       "complete": 16.5
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2259,35 +2259,35 @@ const games = [
       "complete": 20
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Worms Rumble"
   },
   {
-    "id": "xcom2",
+    "id": "xcom_2",
     "times": {
       "main": 31,
       "extra": 43.5,
       "complete": 73
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "XCOM 2"
   },
   {
-    "id": "yakuza0",
+    "id": "yakuza_0",
     "times": {
       "main": 31,
       "extra": 65.5,
       "complete": 133
     },
-    "is_complete": false,
-    "is_wishlist": false,
+    "is_complete": true,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2300,8 +2300,8 @@ const games = [
       "extra": 32.5,
       "complete": 84
     },
-    "is_complete": false,
-    "is_wishlist": false,
+    "is_complete": true,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2315,95 +2315,11 @@ const games = [
       "complete": 22
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Zero Time Dilemma"
-  },
-  {
-    "id": "celeste",
-    "times": {
-      "main": 0,
-      "extra": 0,
-      "complete": 0
-    },
-    "is_complete": false,
-    "is_wishlist": true,
-    "is_rerun": false,
-    "ps4": true,
-    "vita": false,
-    "title": "Celeste"
-  },
-  {
-    "id": "dragon_quest_xi",
-    "times": {
-      "main": 0,
-      "extra": 0,
-      "complete": 0
-    },
-    "is_complete": false,
-    "is_wishlist": true,
-    "is_rerun": false,
-    "ps4": true,
-    "vita": false,
-    "title": "DRAGON QUEST XI"
-  },
-  {
-    "id": "no_mans_sky",
-    "times": {
-      "main": 0,
-      "extra": 0,
-      "complete": 0
-    },
-    "is_complete": false,
-    "is_wishlist": true,
-    "is_rerun": false,
-    "ps4": true,
-    "vita": false,
-    "title": "No Man's Sky"
-  },
-  {
-    "id": "outer_wilds",
-    "times": {
-      "main": 0,
-      "extra": 0,
-      "complete": 0
-    },
-    "is_complete": false,
-    "is_wishlist": true,
-    "is_rerun": false,
-    "ps4": true,
-    "vita": false,
-    "title": "Outer Wilds"
-  },
-  {
-    "id": "salt_and_sanctuary",
-    "times": {
-      "main": 0,
-      "extra": 0,
-      "complete": 0
-    },
-    "is_complete": false,
-    "is_wishlist": true,
-    "is_rerun": false,
-    "ps4": true,
-    "vita": false,
-    "title": "Salt and Sanctuary"
-  },
-  {
-    "id": "sekiro_shadows_die_twice",
-    "times": {
-      "main": 0,
-      "extra": 0,
-      "complete": 0
-    },
-    "is_complete": false,
-    "is_wishlist": true,
-    "is_rerun": false,
-    "ps4": true,
-    "vita": false,
-    "title": "Sekiro: Shadows Die Twice"
   },
   {
     "id": "assassins_creed_iii_remastered",
@@ -2413,7 +2329,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": true,
     "vita": true,
@@ -2427,7 +2343,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2441,7 +2357,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2455,7 +2371,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2469,7 +2385,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2483,7 +2399,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2497,21 +2413,21 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
     "title": "Fall Guys"
   },
   {
-    "id": "gameof_thrones_a_tell_tale_games_series",
+    "id": "game_of_thrones_a_tell_tale_games_series",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2525,7 +2441,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2539,7 +2455,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2553,35 +2469,35 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
     "title": "Metal Gear Solid V: Ground Zeroes"
   },
   {
-    "id": "middle_earth_shadowof_mordor_gameofthe_year",
+    "id": "middle_earth_shadow_of_mordor_game_of_the_year",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
     "title": "Middle-Earth: Shadow of Mordor - Game of the Year"
   },
   {
-    "id": "nightinthe_woods",
+    "id": "night_in_the_woods",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2595,7 +2511,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2609,35 +2525,35 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
     "title": "Sleeping Dogs: Definitive Edition"
   },
   {
-    "id": "talesfromthe_borderlands",
+    "id": "tales_from_the_borderlands",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
     "title": "Tales from the Borderlands"
   },
   {
-    "id": "the_lastof_us_remastered",
+    "id": "the_last_of_us_remastered",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2651,7 +2567,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2665,7 +2581,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2679,7 +2595,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2693,7 +2609,7 @@ const games = [
       "complete": 0
     },
     "is_complete": false,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": true,
     "ps4": false,
     "vita": false,
@@ -2707,7 +2623,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2721,7 +2637,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2735,7 +2651,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2749,7 +2665,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2763,7 +2679,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2777,7 +2693,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2791,7 +2707,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2805,7 +2721,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2819,7 +2735,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2833,7 +2749,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2847,7 +2763,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2861,7 +2777,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2875,7 +2791,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2889,7 +2805,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2903,7 +2819,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2917,7 +2833,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2931,7 +2847,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2945,21 +2861,21 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Dishonored 2"
   },
   {
-    "id": "dishonored_deathofthe_outsider",
+    "id": "dishonored_death_of_the_outsider",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2973,7 +2889,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -2987,7 +2903,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3001,7 +2917,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3015,7 +2931,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3029,21 +2945,21 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Full Throttle Remastered"
   },
   {
-    "id": "godof_war",
+    "id": "god_of_war",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3057,7 +2973,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3071,7 +2987,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3085,7 +3001,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3099,7 +3015,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3113,7 +3029,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3127,7 +3043,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3141,7 +3057,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3155,7 +3071,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3169,7 +3085,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3183,21 +3099,21 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Life Is Strange: Before The Storm"
   },
   {
-    "id": "marvels_guardiansofthe_galaxy_the_telltale_series",
+    "id": "marvels_guardians_of_the_galaxy_the_telltale_series",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3211,21 +3127,21 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Metal Gear Solid V: The Phantom Pain"
   },
   {
-    "id": "mortal_kombat",
+    "id": "mortal_kombat_11",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3239,7 +3155,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3253,7 +3169,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3267,7 +3183,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3281,7 +3197,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3295,7 +3211,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3309,7 +3225,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3323,21 +3239,21 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Saints Row The Third Remastered"
   },
   {
-    "id": "shadowofthe_colossus",
+    "id": "shadow_of_the_colossus",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3351,7 +3267,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3365,7 +3281,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3379,7 +3295,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3393,21 +3309,21 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Tacoma"
   },
   {
-    "id": "the_lastof_us_part_ii",
+    "id": "the_last_of_us_part_ii",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3421,7 +3337,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3435,7 +3351,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3449,7 +3365,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3463,7 +3379,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3477,7 +3393,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3491,7 +3407,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3505,7 +3421,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3519,7 +3435,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3533,7 +3449,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3547,7 +3463,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3561,7 +3477,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3575,21 +3491,21 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
     "title": "Watch_Dogs 2"
   },
   {
-    "id": "what_remainsof_edith_finch",
+    "id": "what_remains_of_edith_finch",
     "times": {
       "main": 0,
       "extra": 0,
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
@@ -3603,7 +3519,7 @@ const games = [
       "complete": 0
     },
     "is_complete": true,
-    "is_wishlist": false,
+    "jettisoned": false,
     "is_rerun": false,
     "ps4": true,
     "vita": false,
