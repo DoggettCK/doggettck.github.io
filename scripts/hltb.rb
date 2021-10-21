@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'uri'
+require 'json'
 require 'net/http'
 require 'net/https'
 require 'nokogiri'
@@ -87,10 +88,30 @@ class Game
     %(<div class="col-md-4" id="#{title_symbol}">#{title}</div>)
   end
 
-  def to_js
-    attributes = [:main, :extra, :complete].map { |attr| "\"#{attr}\": #{send(attr)}" }.join(", ")
+  def to_snake_case(string)
+    string.gsub(/::/, '/').
+      gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+      gsub(/([a-z\d])([A-Z])/,'\1_\2').
+      tr("-", "_").
+      tr(" ", "_").
+      downcase
+  end
 
-    "\"#{title_symbol}\": {#{attributes}, \"systems\": [\"ps4\"]},"
+  def to_js
+    JSON.pretty_generate({
+      "id" => to_snake_case(title),
+      "times" => {
+        "main" => main,
+        "extra" => extra,
+        "complete" => complete
+      },
+      "is_complete" => false,
+      "jettisoned" => false,
+      "is_rerun" => false,
+      "ps4" => true,
+      "vita" => false,
+      "title" => title
+    }) + ","
   end
 
   def to_stdout
@@ -173,18 +194,12 @@ end
 
 
 def format_html(game, i)
-  puts(game.to_html)
   puts(game.to_js)
   puts("------------")
 end
 
-def format_stdout(game, i)
-  puts "#{i+1}: #{game.to_stdout}"
-end
-
 def lookup(title)
   GameLookup.new(title).details.each_with_index(&method(:format_html))
-  #GameLookup.new(title).details.each_with_index(&method(:format_stdout))
 end
 
 GAMES = []
