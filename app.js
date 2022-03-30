@@ -1,200 +1,298 @@
-Vue.component('untimed-game-list', {
-  props: { games: Array, header: String },
-  template: `
-  <div class="row">
-    <div class="text-center col-md-12 h3">{{header}}</div>
-    <untimed-game v-for="game in games" v-bind:game="game" v-bind:key="game.id" />
-  </div>
-  `
-});
-
-Vue.component('timed-game-list', {
-  props: { games: Array, header: String },
-  template: `
-  <div class="row">
-    <div class="text-center col-md-12 h3">{{header}}</div>
-    <timed-game v-for="game in games" v-bind:game="game" v-bind:time="$parent.$data.time" v-bind:key="game.id" />
-  </div>
-  `
-});
-
-Vue.component('untimed-game', {
-  props: { game: Object },
-  template: '<div class="col-md-4">{{game.title}}</div>'
-});
-
-Vue.component('timed-game', {
-  props: { game: Object, time: String, fullWidth: Boolean },
-  render(createElement) {
-    var hours = 0;
-
-    switch(this.time) {
-      case "main":
-        hours = this.game.times.main;
-        break;
-      case "extra":
-        hours = this.game.times.extra;
-        break;
-      default:
-        hours = this.game.times.complete;
-    }
-
-    var description = this.game.title + " (" + hours + " hours)";
-    var children = [createElement('span', description)];
-
-    if (this.game.ps4) {
-      children.push(createElement('img', {attrs: {src: "images/ps4.svg"}}))
-    }
-    
-    if (this.game.vita) {
-      children.push(createElement('img', {attrs: {src: "images/vita.svg"}}))
-    }
-
-    if (this.fullWidth) {
-      attrs = {class: ""}
-    } else {
-      attrs = {class: "col-md-4"}
-    }
-    
-    return createElement('div', {attrs: attrs}, children);
-  }
-});
-
-Vue.component('time-summary', {
-  props: { timeSummary: Number },
-  template: `
-  <h2 id="summary_time" class="text-center">
-    That's {{timeSummary}} total hours of gaming to look forward to.
-  </h2>
-  `
-});
-
-Vue.component('top-n-games', {
-  props: { numGames: Number, games: Array, time: String },
-  computed: {
-    shortest: function() {
-      switch(this.time) {
-        case "main":
-          var sort_func = (a, b) => (a.times.main >= b.times.main) ? 1 : -1;
-          break;
-        case "extra":
-          var sort_func = (a, b) => (a.times.extra >= b.times.extra) ? 1 : -1;
-          break;
-        default:
-          var sort_func = (a, b) => (a.times.complete >= b.times.complete) ? 1 : -1;
-      }
-
-      return this.games.sort(sort_func).slice(0, this.numGames);
-    },
-    longest: function() {
-      switch(this.time) {
-        case "main":
-          var sort_func = (a, b) => (a.times.main < b.times.main) ? 1 : -1;
-          break;
-        case "extra":
-          var sort_func = (a, b) => (a.times.extra < b.times.extra) ? 1 : -1;
-          break;
-        default:
-          var sort_func = (a, b) => (a.times.complete < b.times.complete) ? 1 : -1;
-      }
-
-      return this.games.sort(sort_func).slice(0, this.numGames);
-    },
-    userFriendlyTime: function() {
-      switch(this.time) {
-        case "main":
-          return "Main Story";
-        case "extra":
-          return "Main Story + Extras";
-        default:
-          return "Complete";
-      }
-    }
-  },
-  template: `
-    <div id="summary" class="row">
-      <div class="col-md text-center">
-        <h3>Shortest {{numGames}} games ({{userFriendlyTime}})</h3>
-        <ol>
-          <li v-for="game in shortest"
-          v-bind:game="game"
-          v-bind:time="$parent.$data.time"
-          v-bind:key="game.id">
-            <timed-game v-bind:game="game" v-bind:time="$parent.$data.time" v-bind:full-width="true"></timed-game>
-          </li>
-        </ol>
-      </div>
-      <div class="col-md text-center">
-        <h3>Longest {{numGames}} games ({{userFriendlyTime}})</h3>
-        <ol>
-          <li v-for="game in longest"
-          v-bind:game="game"
-          v-bind:time="$parent.$data.time"
-          v-bind:key="game.id">
-            <timed-game v-bind:game="game" v-bind:time="$parent.$data.time" v-bind:full-width="true"></timed-game>
-          </li>
-        </ol>
-      </div>
-    </div>
-  `
-})
-
-Vue.component('random-game', {
-  props: { game: Object, time: String },
-  template: `
-  <div>
-    <h2 class="text-center">Don't know what to play?</h2>
-    <timed-game class="text-center" v-bind:game="game" v-bind:time="time"></timed-game>
-  </div>
-  `
-});
-
-sort_by_game_title = function(game_a, game_b) {
-  return game_a.title.localeCompare(game_b.title);
+const games = {
+  "_1979_revolution_black_friday": {"main": 2.0, "extra": 3.0, "complete": 4.5, "systems": ["ps4"]},
+  "_2064_read_only_memories": {"main": 9.0, "extra": 10.5, "complete": 17.5, "systems": ["vita"]},
+  "_99_vidas": {"main": 3.0, "extra": 3.0, "complete": 3.0, "systems": ["ps4", "vita"]},
+  "a_way_out": {"main": 6.0, "extra": 6.0, "complete": 7.0, "systems": ["ps4"]},
+  "absolver": {"main": 5.0, "extra": 7.0, "complete": 30.0, "systems": ["ps4"]},
+  "adr1_ft": {"main": 4.5, "extra": 6.0, "complete": 8.5, "systems": ["ps4"]},
+  "amnesia_a_machinefor_pigs": {"main": 4.0, "extra": 5.0, "complete": 6.5, "systems": ["ps4"]},
+  "amnesia_the_dark_descent": {"main": 8.0, "extra": 9.0, "complete": 10.5, "systems": ["ps4"]},
+  "another_world20th_anniversary": {"main": 2.5, "extra": 2.5, "complete": 2.5, "systems": ["vita"]},
+  "aragami": {"main": 6.5, "extra": 10.0, "complete": 18.5, "systems": ["ps4"]},
+  "assassins_creed_chronicles_china": {"main": 6.0, "extra": 9.5, "complete": 17.0, "systems": ["ps4"]},
+  "assassins_creed_chronicles_india": {"main": 5.5, "extra": 7.0, "complete": 15.5, "systems": ["ps4"]},
+  "assassins_creed_chronicles_russia": {"main": 6.5, "extra": 9.0, "complete": 14.5, "systems": ["ps4"]},
+  "beyond_two_souls": {"main": 10.5, "extra": 12.0, "complete": 27.0, "systems": ["ps4"]},
+  "bloodborne": {"main": 35.0, "extra": 45.5, "complete": 77.5, "systems": ["ps4"]},
+  "borderlands3": {"main": 22.5, "extra": 39.5, "complete": 62.0, "systems": ["ps4"]},
+  "borderlands_the_handsome_collection": {"main": 87.0, "extra": 120.0, "complete": 120.0, "systems": ["ps4"]},
+  "broken_sword5_the_serpents_curse": {"main": 11.0, "extra": 12.0, "complete": 14.5, "systems": ["vita"]},
+  "callof_duty_black_ops_iii": {"main": 9.0, "extra": 13.5, "complete": 48.5, "systems": ["ps4"]},
+  "callof_duty_modern_warfare2_remastered": {"main": 5.5, "extra": 7.5, "complete": 15.5, "systems": ["ps4"]},
+  "callof_duty_modern_warfare_remastered": {"main": 6.0, "extra": 7.5, "complete": 16.0, "systems": ["ps4"]},
+  "childof_light": {"main": 11.0, "extra": 13.5, "complete": 15.5, "systems": ["ps4"]},
+  "cities_skylines": {"main": 25.5, "extra": 51.5, "complete": 104.0, "systems": ["ps4"]},
+  "claire": {"main": 3.0, "extra": 3.0, "complete": 5.0, "systems": ["ps4", "vita"]},
+  "cryptofthe_necro_dancer": {"main": 15.0, "extra": 23.0, "complete": 44.0, "systems": ["ps4", "vita"]},
+  "darkest_dungeon": {"main": 53.0, "extra": 79.5, "complete": 103.0, "systems": ["ps4", "vita"]},
+  "darksiders_ii_deathinitive_edition": {"main": 20.0, "extra": 29.0, "complete": 46.5, "systems": ["ps4"]},
+  "darksiders_iii": {"main": 14.0, "extra": 17.5, "complete": 25.5, "systems": ["ps4"]},
+  "dayofthe_tentacle_remastered": {"main": 4.5, "extra": 5.5, "complete": 6.0, "systems": ["ps4", "vita"]},
+  "destiny2": {"main": 12.0, "extra": 24.0, "complete": 99.0, "systems": ["ps4"]},
+  "deus_ex_mankind_divided": {"main": 15.0, "extra": 29.5, "complete": 46.5, "systems": ["ps4"]},
+  "dirt_rally20": {"main": 10.5, "extra": 48.0, "complete": 0.0, "systems": ["ps4"]},
+  "doom_eternal": {"main": 13.5, "extra": 18.0, "complete": 23.5, "systems": ["ps4"]},
+  "downwell": {"main": 8.0, "extra": 12.0, "complete": 15.0, "systems": ["vita"]},
+  "dragon_age_inquisition": {"main": 46.0, "extra": 87.5, "complete": 127.0, "systems": ["ps4"]},
+  "erica": {"main": 2.0, "extra": 3.0, "complete": 9.5, "systems": ["ps4"]},
+  "everybodys_gonetothe_rapture": {"main": 4.5, "extra": 6.0, "complete": 9.0, "systems": ["ps4"]},
+  "fallen_legion_flamesof_rebellion": {"main": 8.0, "extra": 8.0, "complete": 8.0, "systems": ["ps4", "vita"]},
+  "farming_simulator19": {"main": 187.0, "extra": 258.0, "complete": 698.0, "systems": ["ps4"]},
+  "final_fantasy7": {"main": 38.5, "extra": 55.0, "complete": 88.5, "systems": ["ps4"]},
+  "final_fantasy_vi": {"main": 35.5, "extra": 41.0, "complete": 63.5, "systems": ["vita"]},
+  "for_honor": {"main": 7.0, "extra": 9.0, "complete": 16.0, "systems": ["ps4"]},
+  "forma8": {"main": 6.5, "extra": 7.0, "complete": 7.5, "systems": ["ps4", "vita"]},
+  "foul_play": {"main": 4.5, "extra": 4.5, "complete": 10.0, "systems": ["vita"]},
+  "furmins": {"main": 7.0, "extra": 7.0, "complete": 7.0, "systems": ["ps4", "vita"]},
+  "genshin_impact": {"main": 42.0, "extra": 86.0, "complete": 132.0, "systems": ["ps4"]},
+  "ghost_of_tsushima": {"main": 24.0, "extra": 42.0, "complete": 59.0, "systems": ["ps4"]},
+  "godof_war_iii": {"main": 10.5, "extra": 10.5, "complete": 10.5, "systems": ["ps4"]},
+  "grand_kingdom": {"main": 23.0, "extra": 65.5, "complete": 181.0, "systems": ["ps4"]},
+  "grand_theft_auto_v": {"main": 31.5, "extra": 47.0, "complete": 79.5, "systems": ["ps4"]},
+  "gravity_ghost": {"main": 3.0, "extra": 3.0, "complete": 3.5, "systems": ["ps4"]},
+  "gravity_rush2": {"main": 20.0, "extra": 34.0, "complete": 53.5, "systems": ["ps4"]},
+  "greedfall": {"main": 22.0, "extra": 40.0, "complete": 50.0, "systems": ["ps4"]},
+  "headlander": {"main": 5.5, "extra": 7.0, "complete": 8.0, "systems": ["ps4"]},
+  "heavy_rain": {"main": 10.0, "extra": 12.0, "complete": 22.0, "systems": ["ps4"]},
+  "hello_neighbor": {"main": 10.0, "extra": 16.0, "complete": 27.5, "systems": ["ps4"]},
+  "hitman": {"main": 10.5, "extra": 27.5, "complete": 93.5, "systems": ["ps4"]},
+  "hollow_knight": {"main": 23.0, "extra": 35.5, "complete": 49.0, "systems": ["ps4"]},
+  "hotline_miami": {"main": 5.0, "extra": 7.0, "complete": 14.5, "systems": ["ps4", "vita"]},
+  "hotline_miami2_wrong_number": {"main": 9.0, "extra": 12.5, "complete": 29.0, "systems": ["ps4", "vita"]},
+  "hue": {"main": 4.5, "extra": 5.5, "complete": 6.0, "systems": ["vita"]},
+  "human_fall_flat": {"main": 5.0, "extra": 10.0, "complete": 15.5, "systems": ["ps4"]},
+  "i_am_bread": {"main": 2.5, "extra": 5.5, "complete": 13.5, "systems": ["ps4"]},
+  "iconoclasts": {"main": 11.0, "extra": 13.0, "complete": 15.5, "systems": ["ps4", "vita"]},
+  "in_famous_second_son": {"main": 10.0, "extra": 14.0, "complete": 20.0, "systems": ["ps4"]},
+  "infinifactory": {"main": 36.5, "extra": 59.5, "complete": 90.5, "systems": ["ps4"]},
+  "inside": {"main": 3.5, "extra": 4.0, "complete": 4.5, "systems": ["ps4"]},
+  "invisible_inc": {"main": 7.5, "extra": 18.5, "complete": 56.5, "systems": ["ps4"]},
+  "jotun": {"main": 5.5, "extra": 5.5, "complete": 6.5, "systems": ["ps4"]},
+  "journey": {"main": 2.0, "extra": 2.5, "complete": 5.0, "systems": ["ps4"]},
+  "just_cause3": {"main": 17.0, "extra": 34.0, "complete": 56.0, "systems": ["ps4"]},
+  "just_cause4": {"main": 16.0, "extra": 26.0, "complete": 57.5, "systems": ["ps4"]},
+  "killing_floor2": {"main": 12.5, "extra": 46.0, "complete": 136.0, "systems": ["ps4"]},
+  "knack": {"main": 10.5, "extra": 11.5, "complete": 37.5, "systems": ["ps4"]},
+  "lara_croft_go": {"main": 3.5, "extra": 5.5, "complete": 6.5, "systems": ["ps4", "vita"]},
+  "life_is_strange2": {"main": 20.0, "extra": 20.0, "complete": 20.0, "systems": ["ps4"]},
+  "linelight": {"main": 4.0, "extra": 7.0, "complete": 13.0, "systems": ["ps4"]},
+  "mad_max2015": {"main": 19.5, "extra": 37.5, "complete": 61.0, "systems": ["ps4"]},
+  "mafia_iii": {"main": 22.0, "extra": 32.5, "complete": 48.5, "systems": ["ps4"]},
+  "mass_effect_andromeda": {"main": 19.0, "extra": 64.0, "complete": 93.0, "systems": ["ps4"]},
+  "mega_man11": {"main": 4.5, "extra": 5.0, "complete": 12.0, "systems": ["ps4"]},
+  "mega_man_legacy_collection": {"main": 21.0, "extra": 21.0, "complete": 21.0, "systems": ["ps4"]},
+  "metal_gear_solid2_sonsof_liberty": {"main": 13.0, "extra": 15.0, "complete": 23.0, "systems": ["vita"]},
+  "metal_gear_solid3_snake_eater": {"main": 16.0, "extra": 19.5, "complete": 22.5, "systems": ["vita"]},
+  "metro2033_redux": {"main": 9.0, "extra": 11.5, "complete": 22.5, "systems": ["ps4"]},
+  "metro_last_light_redux": {"main": 10.0, "extra": 13.5, "complete": 26.0, "systems": ["ps4"]},
+  "mirrors_edge_catalyst": {"main": 8.5, "extra": 13.0, "complete": 36.0, "systems": ["ps4"]},
+  "moonlighter": {"main": 13.5, "extra": 20.0, "complete": 24.5, "systems": ["ps4"]},
+  "ms_pac_man": {"main": 1.0, "extra": 2.0, "complete": 2.0, "systems": ["ps4"]},
+  "nba2_k20": {"main": 98.0, "extra": 0.0, "complete": 0.0, "systems": ["ps4"]},
+  "never_alone": {"main": 3.0, "extra": 3.5, "complete": 4.0, "systems": ["ps4"]},
+  "ninja_pizza_girl": {"main": 2.0, "extra": 4.5, "complete": 10.0, "systems": ["ps4"]},
+  "okami_hd": {"main": 34.5, "extra": 42.5, "complete": 55.0, "systems": ["ps4"]},
+  "onrush": {"main": 12.0, "extra": 14.0, "complete": 20.5, "systems": ["ps4"]},
+  "overcooked": {"main": 7.5, "extra": 8.5, "complete": 11.5, "systems": ["ps4"]},
+  "oxenfree": {"main": 4.5, "extra": 5.5, "complete": 13.0, "systems": ["ps4"]},
+  "pac_man256": {"main": 10.5, "extra": 10.5, "complete": 10.5, "systems": ["ps4"]},
+  "pac_man_championship_edition2": {"main": 4.5, "extra": 4.5, "complete": 4.5, "systems": ["ps4"]},
+  "papers_please": {"main": 4.5, "extra": 8.0, "complete": 16.0, "systems": ["vita"]},
+  "persona5": {"main": 96.0, "extra": 111.0, "complete": 170.0, "systems": ["ps4"]},
+  "prototype": {"main": 11.0, "extra": 17.5, "complete": 31.5, "systems": ["ps4"]},
+  "prototype2": {"main": 10.0, "extra": 14.0, "complete": 18.5, "systems": ["ps4"]},
+  "psychopass_mandatory_happiness": {"main": 6.0, "extra": 14.5, "complete": 28.0, "systems": ["vita"]},
+  "qube_directors_cut": {"main": 3.0, "extra": 3.5, "complete": 6.5, "systems": ["ps4"]},
+  "ratchet_clank2016": {"main": 10.0, "extra": 12.5, "complete": 20.5, "systems": ["ps4"]},
+  "rayman_legends": {"main": 9.5, "extra": 15.5, "complete": 28.5, "systems": ["ps4"]},
+  "rime": {"main": 5.5, "extra": 6.0, "complete": 9.5, "systems": ["ps4"]},
+  "rise_of_the_tomb_raider": {"main": 13.5, "extra": 21.5, "complete": 34.5, "systems": ["ps4"]},
+  "rocket_league": {"main": 4.0, "extra": 17.5, "complete": 33.0, "systems": ["ps4"]},
+  "rogue_legacy": {"main": 16.5, "extra": 25.5, "complete": 38.0, "systems": ["ps4", "vita"]},
+  "roundabout": {"main": 2.5, "extra": 4.0, "complete": 7.0, "systems": ["vita"]},
+  "shadow_of_the_tomb_raider": {"main": 12.5, "extra": 22.5, "complete": 36.0, "systems": ["ps4"]},
+  "shadow_warrior2013": {"main": 12.5, "extra": 15.0, "complete": 35.5, "systems": ["ps4"]},
+  "sherlock_holmes_crimesand_punishments": {"main": 12.5, "extra": 14.5, "complete": 14.5, "systems": ["ps4"]},
+  "sniper_elite4": {"main": 10.0, "extra": 16.0, "complete": 34.5, "systems": ["ps4"]},
+  "soma": {"main": 9.0, "extra": 10.5, "complete": 11.0, "systems": ["ps4"]},
+  "songofthe_deep": {"main": 6.5, "extra": 9.0, "complete": 11.5, "systems": ["ps4"]},
+  "sonic_forces": {"main": 4.0, "extra": 6.0, "complete": 23.5, "systems": ["ps4"]},
+  "sonic_mania": {"main": 5.5, "extra": 8.5, "complete": 19.0, "systems": ["ps4"]},
+  "space_hulk": {"main": 10.0, "extra": 16.5, "complete": 20.5, "systems": ["vita"]},
+  "spelunky": {"main": 18.0, "extra": 41.0, "complete": 82.5, "systems": ["ps4", "vita"]},
+  "squares2015": {"main": 2.0, "extra": 7.0, "complete": 45.0, "systems": ["vita"]},
+  "star_wars_squadrons": {"main": 8.5, "extra": 13.5, "complete": 20.5, "systems": ["ps4"]},
+  "steam_world_dig": {"main": 5.0, "extra": 6.5, "complete": 8.0, "systems": ["ps4", "vita"]},
+  "steam_world_dig2": {"main": 7.0, "extra": 10.0, "complete": 13.0, "systems": ["ps4", "vita"]},
+  "steep": {"main": 11.5, "extra": 21.0, "complete": 36.0, "systems": ["ps4"]},
+  "street_fighter_v": {"main": 3.0, "extra": 11.0, "complete": 49.5, "systems": ["ps4"]},
+  "sundered": {"main": 13.0, "extra": 15.0, "complete": 17.0, "systems": ["ps4"]},
+  "tekken7": {"main": 3.5, "extra": 7.0, "complete": 15.5, "systems": ["ps4"]},
+  "tetris_effect": {"main": 2.5, "extra": 9.0, "complete": 33.5, "systems": ["ps4"]},
+  "the_bridge": {"main": 4.0, "extra": 5.5, "complete": 7.5, "systems": ["ps4", "vita"]},
+  "the_evil_within": {"main": 16.0, "extra": 19.0, "complete": 37.0, "systems": ["ps4"]},
+  "the_evil_within2": {"main": 13.0, "extra": 18.5, "complete": 28.0, "systems": ["ps4"]},
+  "the_flameinthe_flood": {"main": 9.5, "extra": 15.0, "complete": 25.5, "systems": ["ps4"]},
+  "the_outer_worlds": {"main": 12.5, "extra": 24.5, "complete": 35.5, "systems": ["ps4"]},
+  "the_sexy_brutale": {"main": 6.0, "extra": 7.0, "complete": 8.5, "systems": ["ps4"]},
+  "the_surge": {"main": 20.0, "extra": 28.5, "complete": 41.5, "systems": ["ps4"]},
+  "the_swindle": {"main": 10.0, "extra": 21.0, "complete": 21.0, "systems": ["ps4", "vita"]},
+  "the_talos_principle": {"main": 15.5, "extra": 20.5, "complete": 28.0, "systems": ["ps4"]},
+  "the_witness": {"main": 17.5, "extra": 25.5, "complete": 45.0, "systems": ["ps4"]},
+  "thief2014": {"main": 10.5, "extra": 22.0, "complete": 42.0, "systems": ["ps4"]},
+  "thimbleweed_park": {"main": 10.5, "extra": 13.5, "complete": 14.5, "systems": ["ps4"]},
+  "thisisthe_police": {"main": 18.5, "extra": 21.0, "complete": 25.5, "systems": ["ps4"]},
+  "titanfall2": {"main": 6.0, "extra": 8.0, "complete": 13.5, "systems": ["ps4"]},
+  "track_mania_turbo": {"main": 9.5, "extra": 26.0, "complete": 70.0, "systems": ["ps4"]},
+  "transistor": {"main": 6.0, "extra": 8.5, "complete": 15.5, "systems": ["ps4"]},
+  "trials_fusion": {"main": 6.5, "extra": 24.0, "complete": 87.0, "systems": ["ps4"]},
+  "tropico5": {"main": 20.5, "extra": 39.5, "complete": 92.5, "systems": ["ps4"]},
+  "ultimate_marvel_vs_capcom3": {"main": 59.0, "extra": 10.5, "complete": 102.0, "systems": ["ps4"]},
+  "uncanny_valley": {"main": 1.5, "extra": 2.5, "complete": 5.0, "systems": ["ps4", "vita"]},
+  "unravel": {"main": 6.0, "extra": 7.5, "complete": 12.0, "systems": ["ps4"]},
+  "until_dawn": {"main": 8.0, "extra": 9.0, "complete": 18.0, "systems": ["ps4"]},
+  "until_dawn_rushof_blood": {"main": 2.0, "extra": 3.5, "complete": 3.5, "systems": ["ps4"]},
+  "va11_hall_a_cyberpunk_bartender_action": {"main": 10.5, "extra": 13.0, "complete": 18.0, "systems": ["vita"]},
+  "valiant_hearts_the_great_war": {"main": 6.5, "extra": 7.5, "complete": 9.0, "systems": ["ps4"]},
+  "vampyr": {"main": 16.5, "extra": 28.0, "complete": 41.5, "systems": ["ps4"]},
+  "wanted_corp": {"main": 4.0, "extra": 4.5, "complete": 4.5, "systems": ["vita"]},
+  "watch_dogs_legion": {"main": 17.0, "extra": 30.5, "complete": 49.5, "systems": ["ps4"]},
+  "wipeout_omega_collection": {"main": 28.0, "extra": 0.0, "complete": 0.0, "systems": ["ps4"]},
+  "wizardof_legend": {"main": 6.0, "extra": 15.5, "complete": 20.5, "systems": ["ps4"]},
+  "worms_battlegrounds": {"main": 13.0, "extra": 16.5, "complete": 16.5, "systems": ["ps4"]},
+  "worms_rumble": {"main": 20.0, "extra": 0.0, "complete": 0.0, "systems": ["ps4"]},
+  "xcom2": {"main": 31.0, "extra": 43.5, "complete": 73.0, "systems": ["ps4"]},
+  "yakuza0": {"main": 31.0, "extra": 65.5, "complete": 133.0, "systems": ["ps4"]},
+  "yakuza_kiwami": {"main": 18.0, "extra": 32.5, "complete": 84.0, "systems": ["ps4"]},
+  "zero_time_dilemma": {"main": 21.0, "extra": 21.5, "complete": 22.0, "systems": ["ps4"]}
 };
 
-var app = new Vue({
-  el: '#app',
-  data: { games: all_games, time: 'complete' },
-  computed: {
-    randomGame: function() {
-      var playable = this.gamesToPlay;
+var sort_games = function(time) {
+  return Object.values(games).filter(function(game) {
+    return game[time] > 0.0;
+  }).sort(function(a, b) {
+    return a[time] - b[time];
+  });
+};
 
-      return playable[Math.floor(Math.random() * playable.length)];
-    },
-    gamesToPlay: function() {
-      return this.games
-        .filter(game => !game.jettisoned && !game.is_rerun && !game.is_complete)
-        .sort(sort_by_game_title);
-    },
-    completed: function() {
-      return this.games
-        .filter(game => game.is_complete)
-        .sort(sort_by_game_title)
-    },
-    jettisoned: function() {
-      return this.games
-        .filter(game => game.jettisoned)
-        .sort(sort_by_game_title)
-    },
-    reruns: function() {
-      return this.games
-        .filter(game => game.is_rerun)
-        .sort(sort_by_game_title)
-    },
-    timeSummary: function() {
-      switch(this.time) {
-        case "main":
-          return this.gamesToPlay.reduce((total, game) => total + game.times.main, 0);
-        case "extra":
-          return this.gamesToPlay.reduce((total, game) => total + game.times.extra, 0);
-        default:
-          return this.gamesToPlay.reduce((total, game) => total + game.times.complete, 0);
-      }
-    }
-  },
-  methods: {
-    setTime: function(time) { this.time = time; }
+var system_image = function(system_name) {
+  var img = document.createElement('img');
+
+  img.setAttribute('src', 'images/' + system_name + '.svg');
+
+  return img;
+};
+
+var build_game_node = function(container, game, time) {
+  empty_node(container);
+
+  container.appendChild(document.createTextNode(game['title']));
+
+  game['systems'].forEach(function(system) { container.appendChild(system_image(system)); });
+
+  var hours = document.createElement('i');
+
+  hours.appendChild(document.createTextNode(' (' + game[time] + ' hours)'));
+
+  container.appendChild(hours);
+};
+
+var build_top_n_section = function(time, header_text, games_list) {
+  var container = document.createElement('div');
+  container.className = "col-md text-center";
+
+  var header = document.createElement('h3');
+  header.appendChild(document.createTextNode(header_text));
+
+  container.appendChild(header);
+
+  var list = document.createElement('ol');
+
+  games_list.forEach(function(game) {
+    var list_item = document.createElement('li');
+
+    build_game_node(list_item, game, time);
+    
+    list.appendChild(list_item);
+  });
+
+  container.appendChild(list);
+
+  return container;
+};
+
+var empty_node = function(el) {
+  while(el.firstChild) {
+    el.removeChild(el.firstChild);
   }
-})
+};
 
+var cleanup_ui = function() {
+  empty_node(document.getElementById('summary'));
+  empty_node(document.getElementById('summary_time'));
+
+  document.querySelectorAll('#games_to_play div').forEach(empty_node);
+};
+
+var update_ui = function(time, time_text, top_n) {
+  cleanup_ui();
+
+  var sorted_games = sort_games(time);
+  var total_hours = sorted_games.reduce(function(sum, game){ return sum + game[time]; }, 0);
+
+  var summary_time = document.getElementById('summary_time');
+  summary_time.appendChild(document.createTextNode("That's " + total_hours + " total hours of gaming to look forward to."));
+
+  var shortest = sorted_games.slice(0, top_n);
+  var longest = sorted_games.slice(-top_n).reverse();
+
+  document.querySelectorAll('#games_to_play div').forEach(function(node) {
+    var game = games[node.getAttribute('id')];
+
+    build_game_node(node, game, time);
+  });
+
+  var shortest_section = build_top_n_section(time, "Shortest " + top_n + " games (" + time_text + ")", shortest) 
+  var longest_section = build_top_n_section(time, "Longest " + top_n + " games (" + time_text + ")", longest) 
+
+  var summary = document.getElementById('summary');
+  summary.appendChild(shortest_section);
+  summary.appendChild(longest_section);
+
+  pick_random_game(sorted_games);
+};
+
+var pick_random_game = function(sorted_games) {
+  var random_game = sorted_games[Math.floor(Math.random() * sorted_games.length)];
+  var random_game_id = random_game['key'];
+
+  var game_div = document.querySelector("#" + random_game_id);
+  var random_game_div = document.querySelector("#random_game");
+
+  empty_node(random_game_div);
+
+  cloned_game_node = game_div.cloneNode(true);
+  cloned_game_node.className = cloned_game_node.className.replace(/\bcol-[^\b]+\b/, "");
+
+
+  random_game_div.appendChild(cloned_game_node);
+};
+
+var main = function() {
+  // Add title from HTML to games array, plus key
+  Object.keys(games).forEach(function(key) {
+    games[key]['key'] = key;
+    games[key]['title'] = document.getElementById(key).textContent;
+  });
+
+  document.querySelectorAll('#summary_controls button').forEach(function(button) {
+    button.addEventListener('click', function(){
+      update_ui(button.getAttribute('data-time'), button.innerText, 3)
+    });
+  });
+
+  var first_button = document.querySelector('#summary_controls button');
+  update_ui(first_button.getAttribute('data-time'), first_button.innerText, 3);
+};
+
+main();
