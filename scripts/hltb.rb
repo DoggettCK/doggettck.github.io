@@ -68,7 +68,7 @@ class HLTB
 end
 
 class Game
-  attr_accessor :title, :path, :main, :extra, :complete, :ps4
+  attr_accessor :title, :path, :main, :extra, :complete
 
   def initialize
     @main, @extra, @complete = [0.0] * 3
@@ -105,10 +105,10 @@ class Game
         "extra" => extra,
         "complete" => complete
       },
-      "is_complete" => false,
+      "completed" => false,
       "jettisoned" => false,
-      "is_rerun" => false,
-      "ps4" => true,
+      "rerun" => false,
+      "ps" => true,
       "vita" => false,
       "title" => title
     }) + ","
@@ -195,26 +195,16 @@ end
 
 def format_html(game, i)
   puts(game.to_js)
-  puts("------------")
 end
 
 def lookup(title)
   GameLookup.new(title).details.each_with_index(&method(:format_html))
 end
 
-GAMES = []
-
 def main
-  if ARGV.empty?
-    GAMES.each do |game|
-      lookup(game);
-      puts("==========")
-    end
-  else
-    ARGV.each do |game|
-      lookup(game);
-      puts("==========")
-    end
+  ARGV.each do |game|
+    lookup(game);
+    puts("==========")
   end
 end
 
