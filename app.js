@@ -1,13 +1,13 @@
-const untimed_game = (game) => `<div class="col-md-4">${game.title}</div>`
+const untimed_game = (game) => `<div class="column is-4">${game.title}</div>`
 
 const untimed_game_list = function(header, games) {
   const untimed_games = games.map((game) => untimed_game(game)).join("\n")
 
   return `
-  <div class="row">
-    <div class="text-center col-md-12 h3">${header}</div>
+  <h3 class="title">${header}</h3>
+  <section class="columns is-multiline">
     ${untimed_games}
-  </div>
+  </section>
   `
 }
 
@@ -25,21 +25,13 @@ const timed_game = function(time, game, full_width = false) {
       hours = game.times.complete;
   }
 
-  let children = [`<span>${game.title} (${hours} hours)</span>`]
-
-  if (game.ps) {
-    children.push(`<img src="images/ps.svg" alt="Playstation">`)
-  }
-
-  if (game.vita) {
-    children.push(`<img src="images/vita.svg" alt="Vita">`)
-  }
+  let children = [`${game.title} (${hours} hours)`]
 
   if (full_width) {
     return `<div>${children.join("\n")}</div>`
   }
   else{
-    return `<div class="col-md-4">${children.join("\n")}</div>`
+    return `<div class="column is-4">${children.join("\n")}</div>`
   }
 }
 
@@ -47,10 +39,10 @@ const timed_game_list = function(header, time, games) {
   const timed_games = games.map((game) => timed_game(time, game)).join("\n")
 
   return `
-  <div class="row">
-    <div class="text-center col-md-12 h3">${header}</div>
+  <h3 class="title">${header}</h3>
+  <section class="columns is-multiline">
     ${timed_games}
-  </div>
+  </section>
   `
 }
 
@@ -99,7 +91,7 @@ const shortest = function(time, num_games) {
     .map((game) => `<li>${timed_game(time, game, true)}</li>`);
 
   return `
-  <h3>Shortest ${num_games} games (${user_friendly_time(time)})</h3>
+  <h3 class="title">Shortest ${num_games} games (${user_friendly_time(time)})</h3>
   <ol>${shortest_games.join("\n")}</ol>
   `
 }
@@ -126,7 +118,7 @@ const longest = function(time, num_games) {
     .map((game) => `<li>${timed_game(time, game, true)}`);
 
   return `
-  <h3>Longest ${num_games} games (${user_friendly_time(time)})</h3>
+  <h3 class="title">Longest ${num_games} games (${user_friendly_time(time)})</h3>
   <ol>${longest_games.join("\n")}</ol>
   `
 }
