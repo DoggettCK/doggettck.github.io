@@ -101,7 +101,7 @@ const all_games = [
   {"id": "god_of_war_iii", "times": {"main": 10.5, "extra": 10.5, "complete": 10.5}, "completed": false, "jettisoned": false, "rerun": false, "title": "God of War III"},
   {"id": "gorogoa", "times": {"main": 0, "extra": 0, "complete": 0}, "completed": true, "jettisoned": false, "rerun": false, "title": "Gorogoa"},
   {"id": "grand_kingdom", "times": {"main": 23, "extra": 65.5, "complete": 181}, "completed": false, "jettisoned": true, "rerun": false, "title": "Grand Kingdom"},
-  {"id": "grand_theft_auto_v", "times": {"main": 31.5, "extra": 47, "complete": 79.5}, "completed": false, "jettisoned": false, "rerun": false, "title": "Grand Theft Auto V"},
+  {"id": "grand_theft_auto_v", "times": {"main": 31.5, "extra": 47, "complete": 79.5}, "completed": false, "jettisoned": true, "rerun": false, "title": "Grand Theft Auto V"},
   {"id": "gravity_ghost", "times": {"main": 3, "extra": 3, "complete": 3.5}, "completed": false, "jettisoned": false, "rerun": false, "title": "Gravity Ghost"},
   {"id": "gravity_rush_2", "times": {"main": 20, "extra": 34, "complete": 53.5}, "completed": false, "jettisoned": false, "rerun": false, "title": "Gravity Rush 2"},
   {"id": "greedfall", "times": {"main": 22, "extra": 40, "complete": 50}, "completed": false, "jettisoned": false, "rerun": false, "title": "Greedfall"},
