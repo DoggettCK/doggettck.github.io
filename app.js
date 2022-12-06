@@ -66,7 +66,7 @@ const update_ui = function(time) {
   apply_template("games_to_play", timed_game_list("Games to Play", time, games_to_play()));
   apply_template("reruns", untimed_game_list("Games to Platinum or replay from other systems", reruns()));
   apply_template("completed", untimed_game_list("Games I've Beaten", completed()));
-  apply_template("jettisoned", untimed_game_list("Jettisoned or Won't Play", jettisoned()));
+  apply_template("jettisoned", untimed_game_list("Jettisoned, won't play, or won't platinum", jettisoned()));
 }
 
 const shortest = function(time, num_games) {
