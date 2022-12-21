@@ -72,7 +72,7 @@ const all_games = [
   {"id": "doom", "times": {"main": 0, "extra": 0, "complete": 0}, "completed": true, "jettisoned": false, "rerun": false, "title": "DOOM"},
   {"id": "doom_eternal", "times": {"main": 13.5, "extra": 18, "complete": 23.5}, "completed": false, "jettisoned": true, "rerun": false, "title": "DOOM Eternal"},
   {"id": "downwell", "times": {"main": 8, "extra": 12, "complete": 15}, "completed": false, "jettisoned": false, "rerun": false, "title": "Downwell"},
-  {"id": "dragon_age_inquisition", "times": {"main": 46, "extra": 87.5, "complete": 127}, "completed": false, "jettisoned": false, "rerun": false, "title": "Dragon Age: Inquisition"},
+  {"id": "dragon_age_inquisition", "times": {"main": 46, "extra": 87.5, "complete": 127}, "completed": false, "jettisoned": true, "rerun": false, "title": "Dragon Age: Inquisition"},
   {"id": "ea_sports_ufc_4", "times": {"main": 13.0, "extra": 23.0, "complete": 38.5}, "completed": false, "jettisoned": true, "rerun": false, "title": "EA Sports UFC 4"},
   {"id": "enter_the_gungeon", "times": {"main": 21.5, "extra": 58.5, "complete": 153.0}, "completed": false, "jettisoned": false, "rerun": false, "title": "Enter the Gungeon"},
   {"id": "erica", "times": {"main": 2, "extra": 3, "complete": 9.5}, "completed": false, "jettisoned": false, "rerun": false, "title": "Erica"},
