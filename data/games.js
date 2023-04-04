@@ -1,5 +1,5 @@
 const all_games = [
-  {"id": "_1979_revolution_black_friday", "times": {"main": 2, "extra": 3, "complete": 4.5}, "completed": false, "jettisoned": false, "rerun": false, "title": "1979 Revolution: Black Friday"},
+  {"id": "_1979_revolution_black_friday", "times": {"main": 2, "extra": 3, "complete": 4.5}, "completed": false, "jettisoned": true, "rerun": false, "title": "1979 Revolution: Black Friday"},
   {"id": "_2064_read_only_memories", "times": {"main": 9, "extra": 10.5, "complete": 17.5}, "completed": false, "jettisoned": false, "rerun": false, "title": "2064: Read Only Memories"},
   {"id": "_99_vidas", "times": {"main": 3, "extra": 3, "complete": 3}, "completed": false, "jettisoned": false, "rerun": false, "title": "99Vidas"},
   {"id": "a_way_out", "times": {"main": 6, "extra": 6, "complete": 7}, "completed": false, "jettisoned": false, "rerun": false, "title": "A Way Out"},
